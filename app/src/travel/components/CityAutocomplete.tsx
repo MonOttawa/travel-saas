@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { cn } from '../../lib/utils';
+import canadianCities from '../../data/canadian-cities.json';
 
 interface CityAutocompleteProps {
   id: string;
@@ -13,30 +14,11 @@ interface CityAutocompleteProps {
 export type CitySuggestion = {
   city: string;
   province: string;
-  lat: number;
-  lon: number;
+  lat: number | null;
+  lon: number | null;
 };
 
-export const CITY_SUGGESTIONS: CitySuggestion[] = [
-  { city: 'Toronto', province: 'ON', lat: 43.6532, lon: -79.3832 },
-  { city: 'Ottawa', province: 'ON', lat: 45.4215, lon: -75.6972 },
-  { city: 'Montreal', province: 'QC', lat: 45.5019, lon: -73.5674 },
-  { city: 'Quebec City', province: 'QC', lat: 46.8139, lon: -71.2080 },
-  { city: 'Vancouver', province: 'BC', lat: 49.2827, lon: -123.1207 },
-  { city: 'Victoria', province: 'BC', lat: 48.4284, lon: -123.3656 },
-  { city: 'Calgary', province: 'AB', lat: 51.0447, lon: -114.0719 },
-  { city: 'Edmonton', province: 'AB', lat: 53.5461, lon: -113.4938 },
-  { city: 'Winnipeg', province: 'MB', lat: 49.8954, lon: -97.1385 },
-  { city: 'Regina', province: 'SK', lat: 50.4452, lon: -104.6189 },
-  { city: 'Saskatoon', province: 'SK', lat: 52.1332, lon: -106.6700 },
-  { city: 'Halifax', province: 'NS', lat: 44.6488, lon: -63.5752 },
-  { city: 'Fredericton', province: 'NB', lat: 45.9636, lon: -66.6431 },
-  { city: 'Charlottetown', province: 'PE', lat: 46.2382, lon: -63.1311 },
-  { city: 'St. John\'s', province: 'NL', lat: 47.5615, lon: -52.7126 },
-  { city: 'Yellowknife', province: 'NT', lat: 62.4540, lon: -114.3718 },
-  { city: 'Whitehorse', province: 'YT', lat: 60.7212, lon: -135.0568 },
-  { city: 'Iqaluit', province: 'NU', lat: 63.7467, lon: -68.5168 },
-];
+const CITY_SUGGESTIONS: CitySuggestion[] = (canadianCities as { cities: CitySuggestion[] }).cities;
 
 export function CityAutocomplete({ id, label, value, onChange, placeholder, onSelectSuggestion }: CityAutocompleteProps) {
   const [query, setQuery] = useState(value);
@@ -66,10 +48,13 @@ export function CityAutocomplete({ id, label, value, onChange, placeholder, onSe
   }, [open]);
 
   const filteredCities = useMemo(() => {
-    if (!query) return CITY_SUGGESTIONS.slice(0, 6);
-    return CITY_SUGGESTIONS.filter((item) =>
-      `${item.city}, ${item.province}`.toLowerCase().includes(query.toLowerCase())
-    ).slice(0, 6);
+    const needle = query.trim().toLowerCase();
+    const matches = needle
+      ? CITY_SUGGESTIONS.filter((item) =>
+          `${item.city}, ${item.province}`.toLowerCase().includes(needle)
+        )
+      : CITY_SUGGESTIONS;
+    return matches.slice(0, 12);
   }, [query]);
 
   const handleSelect = (suggestion: CitySuggestion) => {
@@ -103,24 +88,31 @@ export function CityAutocomplete({ id, label, value, onChange, placeholder, onSe
           onFocus={() => setOpen(true)}
           className='w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary'
         />
-        {open && filteredCities.length > 0 && (
+        {open && (
           <div className='absolute z-50 mt-2 w-full overflow-hidden rounded-lg border border-border bg-background shadow-lg dark:bg-card'>
-            <ul className='max-h-52 overflow-y-auto divide-y divide-border/70 text-sm'>
-              {filteredCities.map((item) => (
-                <li key={`${item.city}-${item.province}`}>
-                  <button
-                    type='button'
-                    onClick={() => handleSelect(item)}
-                    className={cn(
-                      'w-full px-3 py-2 text-left hover:bg-primary/10 hover:text-primary transition-colors'
-                    )}
-                  >
-                    <span className='font-medium'>{item.city}</span>
-                    <span className='text-muted-foreground ml-1'>({item.province})</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
+            {filteredCities.length > 0 ? (
+              <ul className='max-h-60 overflow-y-auto divide-y divide-border/70 text-sm'>
+                {filteredCities.map((item) => (
+                  <li key={`${item.city}-${item.province}`}>
+                    <button
+                      type='button'
+                      onClick={() => handleSelect(item)}
+                      className={cn(
+                        'w-full px-3 py-2 text-left transition-colors hover:bg-primary/10 hover:text-primary'
+                      )}
+                    >
+                      <span className='font-medium'>{item.city}</span>
+                      <span className='text-muted-foreground ml-1'>({item.province})</span>
+                      {item.lat === null || item.lon === null ? (
+                        <span className='ml-2 text-[11px] uppercase tracking-wide text-amber-600 dark:text-amber-400'>Manual distance</span>
+                      ) : null}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <div className='px-3 py-2 text-sm text-muted-foreground'>No matching cities found.</div>
+            )}
           </div>
         )}
       </div>

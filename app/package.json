@@ -2,7 +2,8 @@
   "name": "opensaas",
   "type": "module",
   "scripts": {
-    "scrape:official-rates": "node ./scripts/official-rates/scrapeAll.js"
+    "scrape:official-rates": "node ./scripts/official-rates/scrapeAll.js",
+    "generate:canadian-cities": "node ./scripts/travel/generateCanadianCities.js"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.523.0",

@@ -175,7 +175,13 @@ interface EstimateResults {
   mealEffectiveDate?: string | null;
 }
 
-function calculateDistanceKm(origin: CitySuggestion, destination: CitySuggestion): number {
+type CityWithCoordinates = CitySuggestion & { lat: number; lon: number };
+
+function hasCityCoordinates(city: CitySuggestion | null): city is CityWithCoordinates {
+  return Boolean(city && typeof city.lat === 'number' && typeof city.lon === 'number');
+}
+
+function calculateDistanceKm(origin: CityWithCoordinates, destination: CityWithCoordinates): number {
   const toRad = (deg: number) => (deg * Math.PI) / 180;
   const R = 6371;
 
@@ -243,9 +249,14 @@ export default function TravelEstimatorPage() {
   const [incidentalsDaysManuallyEdited, setIncidentalsDaysManuallyEdited] = useState(false);
 
   const autoDistance = useMemo(() => {
-    if (!originSuggestion || !destinationSuggestion) return null;
+    if (!hasCityCoordinates(originSuggestion) || !hasCityCoordinates(destinationSuggestion)) return null;
     return Math.round(calculateDistanceKm(originSuggestion, destinationSuggestion));
   }, [originSuggestion, destinationSuggestion]);
+  const originHasCoordinates = hasCityCoordinates(originSuggestion);
+  const destinationHasCoordinates = hasCityCoordinates(destinationSuggestion);
+  const requiresManualDistance =
+    estimate.travelMode === 'personal' &&
+    ((originSuggestion && !originHasCoordinates) || (destinationSuggestion && !destinationHasCoordinates));
 
   const [currentStep, setCurrentStep] = useState(0);
   const totalSteps = ONBOARDING_STEP_INFO.length;
@@ -779,6 +790,11 @@ export default function TravelEstimatorPage() {
                 />
                 {estimate.travelMode === 'personal' && autoDistance !== null && !distanceManuallyEdited && (
                   <p className='text-xs text-muted-foreground'>Suggested automatically based on selected cities.</p>
+                )}
+                {requiresManualDistance && (
+                  <p className='text-xs text-muted-foreground text-amber-600 dark:text-amber-400'>
+                    Enter the total kilometres manually — we do not yet have coordinate data for one of the selected cities.
+                  </p>
                 )}
               </div>
               <div className='space-y-2'>

@@ -102,6 +102,8 @@ This report validates the accuracy and currency of the official Canadian governm
 - Verify that each generated JSON includes recent metadata:
   - `app/data/official-rates/exchange-rates.json` should include a `metadata.context.range` so the estimator can surface the conversion window.
   - Empty `rows` arrays will now trigger in-app fallback messaging for hotel and incidental defaults—rerun the scraper (or populate the files) before exporting figures.
+- Refresh the traveller city autocomplete dataset with `npm run generate:canadian-cities` so newly scraped Canadian city limits appear in the wizard.
+- Distance estimates inside `/estimator` use the haversine formula, comparing latitude/longitude pairs stored in `app/data/canadian-cities.json`. If either city is missing coordinates, the UI prompts the user to enter kilometres manually—fill in the outstanding coordinates before relying on automated mileage.
 
 Re-run the scraper whenever Treasury Board updates these sources so downstream data stays current.
 
