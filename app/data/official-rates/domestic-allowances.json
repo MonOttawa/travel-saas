@@ -1,0 +1,217 @@
+{
+  "source": "https://www.njc-cnm.gc.ca/directive/d10/v238/s659/en",
+  "fetchedAt": "2025-09-29T13:45:03.736Z",
+  "hash": "672573a0212c71e15f0ece363a93340d90243fada83bea0b5bd18e3565473c64",
+  "headers": [
+    {
+      "label": "Category",
+      "key": "category"
+    },
+    {
+      "label": "Canada & USA",
+      "key": "canadaUsa"
+    },
+    {
+      "label": "Yukon & Alaska",
+      "key": "yukonAlaska"
+    },
+    {
+      "label": "N.W.T.",
+      "key": "nWT"
+    },
+    {
+      "label": "Nunavut",
+      "key": "nunavut"
+    }
+  ],
+  "rows": [
+    {
+      "category": "1. Canada"
+    },
+    {
+      "category": "1.1 Private non-commercial accommodation allowance"
+    },
+    {
+      "category": "Day 1 – 120",
+      "canadaUsa": "50.00",
+      "yukonAlaska": "50.00",
+      "nWT": "50.00",
+      "nunavut": "50.00"
+    },
+    {
+      "category": "Day 121 onward",
+      "canadaUsa": "25.00",
+      "yukonAlaska": "25.00",
+      "nWT": "25.00",
+      "nunavut": "25.00"
+    },
+    {
+      "category": "1.2 Meal allowances"
+    },
+    {
+      "category": "breakfast - 100% (up to 30th day)",
+      "canadaUsa": "28.40*",
+      "yukonAlaska": "27.95",
+      "nWT": "30.50",
+      "nunavut": "30.55"
+    },
+    {
+      "category": "breakfast - 75% (31st to 120th day)",
+      "canadaUsa": "21.30*",
+      "yukonAlaska": "20.95",
+      "nWT": "22.90",
+      "nunavut": "22.90"
+    },
+    {
+      "category": "breakfast – 50% (121st day onward)",
+      "canadaUsa": "14.20*",
+      "yukonAlaska": "14.00",
+      "nWT": "15.25",
+      "nunavut": "15.30"
+    },
+    {
+      "category": "lunch - 100% (up to 30th day)",
+      "canadaUsa": "27.40*",
+      "yukonAlaska": "25.65",
+      "nWT": "37.00",
+      "nunavut": "37.05"
+    },
+    {
+      "category": "lunch - 75% (31st to 120th day)",
+      "canadaUsa": "20.55*",
+      "yukonAlaska": "19.25",
+      "nWT": "27.75",
+      "nunavut": "27.80"
+    },
+    {
+      "category": "lunch – 50% (121st day onward)",
+      "canadaUsa": "13.70*",
+      "yukonAlaska": "12.85",
+      "nWT": "18.50",
+      "nunavut": "18.55"
+    },
+    {
+      "category": "dinner - 100% (up to 30th day)",
+      "canadaUsa": "57.70*",
+      "yukonAlaska": "73.95",
+      "nWT": "79.20",
+      "nunavut": "98.75"
+    },
+    {
+      "category": "dinner - 75% (31st to 120th day)",
+      "canadaUsa": "43.30*",
+      "yukonAlaska": "55.45",
+      "nWT": "59.40",
+      "nunavut": "74.05"
+    },
+    {
+      "category": "dinner – 50% (121st day onward)",
+      "canadaUsa": "28.85*",
+      "yukonAlaska": "37.00",
+      "nWT": "39.60",
+      "nunavut": "49.40"
+    },
+    {
+      "category": "Meal allowance total – 100% (up to 30th day)",
+      "canadaUsa": "113.50*",
+      "yukonAlaska": "127.55",
+      "nWT": "146.70",
+      "nunavut": "166.35"
+    },
+    {
+      "category": "Meal allowance total – 75% (31st to 120th day)",
+      "canadaUsa": "85.15*",
+      "yukonAlaska": "95.65",
+      "nWT": "110.05",
+      "nunavut": "124.75"
+    },
+    {
+      "category": "Meal allowance total – 50% (121st day onward)",
+      "canadaUsa": "56.75*",
+      "yukonAlaska": "63.85",
+      "nWT": "73.35",
+      "nunavut": "83.25"
+    },
+    {
+      "category": "1.3 Incidental allowance – 100%",
+      "canadaUsa": "17.30*",
+      "yukonAlaska": "17.30",
+      "nWT": "17.30",
+      "nunavut": "17.30"
+    },
+    {
+      "category": "Incidental allowance – 75% (31st day onward)",
+      "canadaUsa": "13.00*",
+      "yukonAlaska": "13.00",
+      "nWT": "13.00",
+      "nunavut": "13.00"
+    },
+    {
+      "category": "Daily Total"
+    },
+    {
+      "category": "Meals and incidentals – 100%",
+      "canadaUsa": "130.80*",
+      "yukonAlaska": "144.85",
+      "nWT": "164.00",
+      "nunavut": "183.65"
+    },
+    {
+      "category": "Meals and incidentals – 75% (31st day onward)",
+      "canadaUsa": "98.15*",
+      "yukonAlaska": "108.65",
+      "nWT": "123.05",
+      "nunavut": "137.75"
+    },
+    {
+      "category": "Meals (50%) and incidentals (75%) (121st day onward)",
+      "canadaUsa": "69.75*",
+      "yukonAlaska": "76.85",
+      "nWT": "86.35",
+      "nunavut": "96.25"
+    },
+    {
+      "category": "1.4 Weekend travel home transportation allowances (Refer to 3.3.12 Weekend travel home, Every weekend: (b))"
+    },
+    {
+      "category": "two-day weekend",
+      "canadaUsa": "361.60",
+      "yukonAlaska": "389.70",
+      "nWT": "428.00",
+      "nunavut": "467.30"
+    },
+    {
+      "category": "three-day weekend",
+      "canadaUsa": "542.40",
+      "yukonAlaska": "584.55",
+      "nWT": "642.00",
+      "nunavut": "700.95"
+    },
+    {
+      "category": "four-day weekend",
+      "canadaUsa": "723.20",
+      "yukonAlaska": "779.40",
+      "nWT": "856.00",
+      "nunavut": "934.60"
+    },
+    {
+      "category": "2. United States of America (USA)"
+    },
+    {
+      "category": "Allowances in the United States of America are the same as in Canada but paid in US funds. * NOTE: Refer to Appendix D for United States of America (Outside the Continental USA ONLY: Guam, Hawaii, Northern Marianas, Puerto Rico and Virgin Islands) for meal and incidental allowances, paid in US funds."
+    },
+    {
+      "category": "3. Appendix D – Explanatory Note"
+    },
+    {
+      "category": "For all locations in Appendix D indicating an asterisk (*) for all three meals (denoting reasonable and justifiable expenses, receipts required), the incidental allowance reflects the amount published in Appendix C, under Canada & USA, paid in Canadian dollars (CAD)."
+    }
+  ],
+  "metadata": {
+    "description": "Domestic meal and incidental rates (Appendix C)",
+    "effectiveDate": "April 1, 2025",
+    "notes": [
+      "Seventy-five percent (75%) of the meal and incidental allowances shall be paid starting on the 31st consecutive calendar day and fifty percent (50%) of the meal allowance on the 121st consecutive calendar day of travel status at the same location when corporate residences or apartment hotels are available to a traveller in the area surrounding the workplace, or when the traveller chooses to stay in private accommodation."
+    ]
+  }
+}

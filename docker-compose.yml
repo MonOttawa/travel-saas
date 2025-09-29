@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: travel_saas
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-devpassword123}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Wasp Server (Backend API)
+  server:
+    build: 
+      context: ./app/.wasp/build
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      # Database
+      DATABASE_URL: postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-devpassword123}@db:5432/travel_saas
+      
+      # Wasp/Auth
+      JWT_SECRET: ${JWT_SECRET:-your-secret-jwt-key-min-32-chars-long!}
+      WASP_WEB_CLIENT_URL: ${CLIENT_URL:-http://localhost:3000}
+      WASP_SERVER_URL: ${SERVER_URL:-http://localhost:3001}
+      
+      # Stripe (for demo, using dummy values)
+      STRIPE_API_KEY: ${STRIPE_API_KEY:-sk_test_dummy}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-whsec_dummy}
+      STRIPE_CUSTOMER_PORTAL_URL: ${STRIPE_CUSTOMER_PORTAL_URL:-https://billing.stripe.com/test/session/create}
+      
+      # Payment Plans
+      PAYMENTS_HOBBY_SUBSCRIPTION_PLAN_ID: ${PAYMENTS_HOBBY_SUBSCRIPTION_PLAN_ID:-price_hobby}
+      PAYMENTS_PRO_SUBSCRIPTION_PLAN_ID: ${PAYMENTS_PRO_SUBSCRIPTION_PLAN_ID:-price_pro}
+      PAYMENTS_CREDITS_10_PLAN_ID: ${PAYMENTS_CREDITS_10_PLAN_ID:-price_credits}
+      
+      # Admin
+      ADMIN_EMAILS: ${ADMIN_EMAILS:-admin@travelcost.app}
+      
+      # Email (Dummy for demo)
+      SENDGRID_API_KEY: ${SENDGRID_API_KEY:-dummy}
+      
+      # Port
+      PORT: 3001
+    ports:
+      - "3001:3001"
+    command: sh -c "npx prisma migrate deploy && node server.js"
+
+  # React Client (Frontend)
+  client:
+    build:
+      context: ./app/.wasp/build/web-app
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_URL: ${SERVER_URL:-http://localhost:3001}
+    restart: always
+    environment:
+      # Client env vars must be baked into the build
+      REACT_APP_GOOGLE_ANALYTICS_ID: ${REACT_APP_GOOGLE_ANALYTICS_ID:-}
+    ports:
+      - "3000:80"
+    depends_on:
+      - server
+
+volumes:
+  postgres_data:
+
+# Networks (optional, Docker Compose creates a default network)
+networks:
+  default:
+    name: travel-saas-network

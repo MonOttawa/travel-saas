@@ -1,0 +1,193 @@
+{
+  "source": "https://rehelv-acrd.tpsgc-pwgsc.gc.ca/rechercher-search-4-eng.aspx",
+  "fetchedAt": "2025-09-29T13:45:04.549Z",
+  "hash": "60e5da5d3933a56ef8b2eab470aa7eb2991becd35906a2cf641a8d38ef05ce9f",
+  "headers": [
+    {
+      "label": "Company",
+      "key": "company"
+    },
+    {
+      "label": "Location Type",
+      "key": "locationType"
+    },
+    {
+      "label": "Car Type",
+      "key": "carType"
+    },
+    {
+      "label": "Car Type Label",
+      "key": "carTypeLabel"
+    },
+    {
+      "label": "Daily Rate",
+      "key": "dailyRate"
+    },
+    {
+      "label": "Weekly Rate",
+      "key": "weeklyRate"
+    },
+    {
+      "label": "Monthly Rate",
+      "key": "monthlyRate"
+    },
+    {
+      "label": "Long Term Rate",
+      "key": "longTermRate"
+    },
+    {
+      "label": "Vehicle Licensing Fee",
+      "key": "vlf"
+    },
+    {
+      "label": "Airport Concession Fee (%)",
+      "key": "acrfPercent"
+    },
+    {
+      "label": "Additional Charges (ACSRF)",
+      "key": "acsrf"
+    },
+    {
+      "label": "Subtotal",
+      "key": "subTotal"
+    },
+    {
+      "label": "Collision Damage Insurance",
+      "key": "cdi"
+    },
+    {
+      "label": "Currency",
+      "key": "currency"
+    }
+  ],
+  "rows": [
+    {
+      "company": "Enterprise Rent A Car",
+      "locationType": "Airport",
+      "carType": "B",
+      "carTypeLabel": "Compact",
+      "dailyRate": 33.98,
+      "weeklyRate": 230.93,
+      "monthlyRate": 959.99,
+      "longTermRate": 959.99,
+      "vlf": 0.32,
+      "acrfPercent": 16.28,
+      "acsrf": 0,
+      "subTotal": 39.88,
+      "cdi": 9.99,
+      "currency": "CAD"
+    },
+    {
+      "company": "Hertz Canada Ltd.",
+      "locationType": "Airport",
+      "carType": "B",
+      "carTypeLabel": "Compact",
+      "dailyRate": 41.93,
+      "weeklyRate": 251.56,
+      "monthlyRate": 1006.24,
+      "longTermRate": 1006.24,
+      "vlf": 1.47,
+      "acrfPercent": 16.28,
+      "acsrf": 0,
+      "subTotal": 50.46,
+      "cdi": 19.99,
+      "currency": "CAD"
+    },
+    {
+      "company": "Budget Rent a Car",
+      "locationType": "Airport",
+      "carType": "B",
+      "carTypeLabel": "Compact",
+      "dailyRate": 43,
+      "weeklyRate": 258,
+      "monthlyRate": 1032,
+      "longTermRate": 1032,
+      "vlf": 1.67,
+      "acrfPercent": 16.28,
+      "acsrf": 0,
+      "subTotal": 51.94,
+      "cdi": 14.99,
+      "currency": "CAD"
+    },
+    {
+      "company": "Enterprise Rent A Car",
+      "locationType": "City",
+      "carType": "B",
+      "carTypeLabel": "Compact",
+      "dailyRate": 33.98,
+      "weeklyRate": 230.93,
+      "monthlyRate": 959.99,
+      "longTermRate": 959.99,
+      "vlf": 0.32,
+      "acrfPercent": 0,
+      "acsrf": 0,
+      "subTotal": 34.3,
+      "cdi": 9.99,
+      "currency": "CAD"
+    },
+    {
+      "company": "Hertz Canada Ltd.",
+      "locationType": "City",
+      "carType": "B",
+      "carTypeLabel": "Compact",
+      "dailyRate": 39.83,
+      "weeklyRate": 238.96,
+      "monthlyRate": 955.84,
+      "longTermRate": 955.84,
+      "vlf": 1.47,
+      "acrfPercent": 0,
+      "acsrf": 0,
+      "subTotal": 41.3,
+      "cdi": 19.99,
+      "currency": "CAD"
+    },
+    {
+      "company": "Budget Rent a Car",
+      "locationType": "City",
+      "carType": "B",
+      "carTypeLabel": "Compact",
+      "dailyRate": 43,
+      "weeklyRate": 258,
+      "monthlyRate": 1032,
+      "longTermRate": 1032,
+      "vlf": 1.67,
+      "acrfPercent": 0,
+      "acsrf": 0,
+      "subTotal": 44.67,
+      "cdi": 14.99,
+      "currency": "CAD"
+    }
+  ],
+  "metadata": {
+    "description": "Government car rental rates for Ottawa (Compact)",
+    "notes": [
+      "NOTE: Rates for Canadian locations are displayed in Canadian dollars while US location rates are in US dollars.",
+      "NOTE: Snow tire fees may apply to rentals over and above the amounts shown in the table above. Please select a company to access their information page to verify if snow tire fees apply."
+    ],
+    "context": {
+      "country": {
+        "value": "1",
+        "label": "Canada"
+      },
+      "province": {
+        "value": "ON",
+        "label": "Ontario"
+      },
+      "city": {
+        "value": "398",
+        "label": "Ottawa"
+      },
+      "location": {
+        "value": "X",
+        "label": "All"
+      },
+      "rateType": {
+        "value": "X",
+        "label": "Daily"
+      },
+      "carTypes": {
+        "B": "Compact"
+      }
+    }
+  }
+}

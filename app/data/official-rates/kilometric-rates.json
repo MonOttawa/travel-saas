@@ -1,0 +1,73 @@
+{
+  "source": "https://www.njc-cnm.gc.ca/directive/d10/v238/s658/en",
+  "fetchedAt": "2025-09-29T13:45:03.729Z",
+  "hash": "ddab57cab83b9d613e5c82a70df081b21c4940421e5a7d82cee77d177470ce9e",
+  "headers": [
+    {
+      "label": "Province/Territory",
+      "key": "provinceTerritory"
+    },
+    {
+      "label": "Cents/km",
+      "key": "centsKm"
+    }
+  ],
+  "rows": [
+    {
+      "provinceTerritory": "Alberta",
+      "centsKm": "57.0"
+    },
+    {
+      "provinceTerritory": "British Columbia",
+      "centsKm": "60.0"
+    },
+    {
+      "provinceTerritory": "Manitoba",
+      "centsKm": "56.5"
+    },
+    {
+      "provinceTerritory": "New Brunswick",
+      "centsKm": "60.0"
+    },
+    {
+      "provinceTerritory": "Newfoundland and Labrador",
+      "centsKm": "62.0"
+    },
+    {
+      "provinceTerritory": "Northwest Territories",
+      "centsKm": "71.0"
+    },
+    {
+      "provinceTerritory": "Nova Scotia",
+      "centsKm": "60.0"
+    },
+    {
+      "provinceTerritory": "Nunavut",
+      "centsKm": "71.5"
+    },
+    {
+      "provinceTerritory": "Ontario",
+      "centsKm": "62.5"
+    },
+    {
+      "provinceTerritory": "Prince Edward Island",
+      "centsKm": "59.0"
+    },
+    {
+      "provinceTerritory": "Quebec",
+      "centsKm": "60.5"
+    },
+    {
+      "provinceTerritory": "Saskatchewan",
+      "centsKm": "56.0"
+    },
+    {
+      "provinceTerritory": "Yukon",
+      "centsKm": "71.5"
+    }
+  ],
+  "metadata": {
+    "description": "Kilometric reimbursement rates (Appendix B)",
+    "effectiveDate": "July 1, 2025"
+  }
+}

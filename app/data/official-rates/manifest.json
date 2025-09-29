@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2025-09-29T13:45:07.255Z",
+  "sources": [
+    {
+      "id": "kilometricRates",
+      "hash": "ddab57cab83b9d613e5c82a70df081b21c4940421e5a7d82cee77d177470ce9e",
+      "recordCount": 13,
+      "source": "https://www.njc-cnm.gc.ca/directive/d10/v238/s658/en",
+      "effectiveDate": "July 1, 2025"
+    },
+    {
+      "id": "domesticAllowances",
+      "hash": "672573a0212c71e15f0ece363a93340d90243fada83bea0b5bd18e3565473c64",
+      "recordCount": 31,
+      "source": "https://www.njc-cnm.gc.ca/directive/d10/v238/s659/en",
+      "effectiveDate": "April 1, 2025"
+    },
+    {
+      "id": "internationalAllowances",
+      "hash": "c74d00c7ea82c24a45c0e7319dd2c5b58946a0c48c8b07213ca4e2cebcd38e22",
+      "recordCount": 2514,
+      "source": "https://www.njc-cnm.gc.ca/directive/app_d/en",
+      "effectiveDate": "Current - July 1, 2025"
+    },
+    {
+      "id": "cityRateLimits",
+      "hash": "fa2cc5ef695bfcc372788127059098a3eb923a7bb8155f875e1641edb7e12ae2",
+      "recordCount": 1386,
+      "source": "https://rehelv-acrd.tpsgc-pwgsc.gc.ca/lth-crl-eng.aspx",
+      "effectiveDate": "2024-12-02"
+    },
+    {
+      "id": "carRentalRates",
+      "hash": "60e5da5d3933a56ef8b2eab470aa7eb2991becd35906a2cf641a8d38ef05ce9f",
+      "recordCount": 6,
+      "source": "https://rehelv-acrd.tpsgc-pwgsc.gc.ca/rechercher-search-4-eng.aspx"
+    },
+    {
+      "id": "exchangeRates",
+      "hash": "6e061f88fc964e44e264c9b2f550df7f63b33c74e53b60cf69c7da40045a21e2",
+      "recordCount": 90,
+      "source": "https://www.njc-cnm.gc.ca/xe/en"
+    }
+  ]
+}

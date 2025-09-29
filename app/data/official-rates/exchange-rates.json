@@ -1,0 +1,971 @@
+{
+  "source": "https://www.njc-cnm.gc.ca/xe/en",
+  "fetchedAt": "2025-09-29T13:45:07.253Z",
+  "hash": "6e061f88fc964e44e264c9b2f550df7f63b33c74e53b60cf69c7da40045a21e2",
+  "headers": [
+    {
+      "label": "Currency Code",
+      "key": "currencyCode"
+    },
+    {
+      "label": "Currency Name",
+      "key": "currencyName"
+    },
+    {
+      "label": "Date",
+      "key": "date"
+    },
+    {
+      "label": "Rate",
+      "key": "rate"
+    },
+    {
+      "label": "Start Rate",
+      "key": "startRate"
+    },
+    {
+      "label": "End Rate",
+      "key": "endRate"
+    }
+  ],
+  "rows": [
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-08-15",
+      "rate": 1.3806,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-08-18",
+      "rate": 1.3809,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-08-19",
+      "rate": 1.3852,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-08-20",
+      "rate": 1.3866,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-08-21",
+      "rate": 1.3897,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-08-22",
+      "rate": 1.3854,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-08-25",
+      "rate": 1.3835,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-08-26",
+      "rate": 1.3837,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-08-27",
+      "rate": 1.3821,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-08-28",
+      "rate": 1.3756,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-08-29",
+      "rate": 1.3742,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-02",
+      "rate": 1.3789,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-03",
+      "rate": 1.3794,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-04",
+      "rate": 1.3829,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-05",
+      "rate": 1.3829,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-08",
+      "rate": 1.3816,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-09",
+      "rate": 1.3833,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-10",
+      "rate": 1.3854,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-11",
+      "rate": 1.3844,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-12",
+      "rate": 1.3848,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-15",
+      "rate": 1.3804,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-16",
+      "rate": 1.3748,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-17",
+      "rate": 1.376,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-18",
+      "rate": 1.3797,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-19",
+      "rate": 1.3788,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-22",
+      "rate": 1.3816,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-23",
+      "rate": 1.3832,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-24",
+      "rate": 1.3893,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-25",
+      "rate": 1.3927,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "USD",
+      "currencyName": "US Dollar",
+      "date": "2025-09-26",
+      "rate": 1.3941,
+      "startRate": 1.3806,
+      "endRate": 1.3941
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-08-15",
+      "rate": 1.6156,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-08-18",
+      "rate": 1.6112,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-08-19",
+      "rate": 1.6154,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-08-20",
+      "rate": 1.6167,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-08-21",
+      "rate": 1.6147,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-08-22",
+      "rate": 1.62,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-08-25",
+      "rate": 1.6141,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-08-26",
+      "rate": 1.6119,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-08-27",
+      "rate": 1.605,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-08-28",
+      "rate": 1.6065,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-08-29",
+      "rate": 1.6062,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-02",
+      "rate": 1.6057,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-03",
+      "rate": 1.6089,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-04",
+      "rate": 1.6101,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-05",
+      "rate": 1.6224,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-08",
+      "rate": 1.623,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-09",
+      "rate": 1.6217,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-10",
+      "rate": 1.6224,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-11",
+      "rate": 1.6239,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-12",
+      "rate": 1.6237,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-15",
+      "rate": 1.624,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-16",
+      "rate": 1.6286,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-17",
+      "rate": 1.6305,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-18",
+      "rate": 1.6259,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-19",
+      "rate": 1.6199,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-22",
+      "rate": 1.628,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-23",
+      "rate": 1.6325,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-24",
+      "rate": 1.6309,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-25",
+      "rate": 1.6263,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "Euro",
+      "date": "2025-09-26",
+      "rate": 1.6301,
+      "startRate": 1.6156,
+      "endRate": 1.6301
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-08-15",
+      "rate": 1.872,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-08-18",
+      "rate": 1.8671,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-08-19",
+      "rate": 1.8695,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-08-20",
+      "rate": 1.8673,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-08-21",
+      "rate": 1.8661,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-08-22",
+      "rate": 1.8703,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-08-25",
+      "rate": 1.8662,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-08-26",
+      "rate": 1.8652,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-08-27",
+      "rate": 1.8619,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-08-28",
+      "rate": 1.859,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-08-29",
+      "rate": 1.8541,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-02",
+      "rate": 1.8454,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-03",
+      "rate": 1.8536,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-04",
+      "rate": 1.8572,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-05",
+      "rate": 1.8698,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-08",
+      "rate": 1.8709,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-09",
+      "rate": 1.8727,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-10",
+      "rate": 1.876,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-11",
+      "rate": 1.8778,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-12",
+      "rate": 1.8772,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-15",
+      "rate": 1.8777,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-16",
+      "rate": 1.8771,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-17",
+      "rate": 1.8796,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-18",
+      "rate": 1.8711,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-19",
+      "rate": 1.8583,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-22",
+      "rate": 1.8662,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-23",
+      "rate": 1.87,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-24",
+      "rate": 1.8683,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-25",
+      "rate": 1.8601,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "British Pound",
+      "date": "2025-09-26",
+      "rate": 1.8675,
+      "startRate": 1.872,
+      "endRate": 1.8675
+    }
+  ],
+  "metadata": {
+    "description": "NJC exchange rates (USD, EUR, GBP)",
+    "notes": [
+      "There is no rate available for the last day in country. The date used for rates has been adjusted to the previous business day."
+    ],
+    "context": {
+      "range": {
+        "start": "2025-08-15",
+        "end": "2025-09-29",
+        "adjusted": {
+          "start": "2025-08-15",
+          "end": "2025-09-27"
+        }
+      },
+      "currencies": {
+        "USD": {
+          "name": "US Dollar",
+          "startRate": 1.3806,
+          "endRate": 1.3941,
+          "totalDays": 30
+        },
+        "EUR": {
+          "name": "Euro",
+          "startRate": 1.6156,
+          "endRate": 1.6301,
+          "totalDays": 30
+        },
+        "GBP": {
+          "name": "British Pound",
+          "startRate": 1.872,
+          "endRate": 1.8675,
+          "totalDays": 30
+        }
+      },
+      "attempts": {
+        "USD": [
+          {
+            "start": "2025-08-15",
+            "end": "2025-09-29",
+            "result": {
+              "error": "There is no rate available for the last day in country. The date used for rates has been adjusted to the previous business day.",
+              "new_dates": {
+                "start": "2025-08-15",
+                "end": "2025-09-28"
+              }
+            }
+          },
+          {
+            "start": "2025-08-15",
+            "end": "2025-09-28",
+            "result": {
+              "code": null,
+              "name": "US Dollar",
+              "start": 1.3806,
+              "end": 1.3941,
+              "dates": {
+                "2025-08-15": "1.3806",
+                "2025-08-18": "1.3809",
+                "2025-08-19": "1.3852",
+                "2025-08-20": "1.3866",
+                "2025-08-21": "1.3897",
+                "2025-08-22": "1.3854",
+                "2025-08-25": "1.3835",
+                "2025-08-26": "1.3837",
+                "2025-08-27": "1.3821",
+                "2025-08-28": "1.3756",
+                "2025-08-29": "1.3742",
+                "2025-09-02": "1.3789",
+                "2025-09-03": "1.3794",
+                "2025-09-04": "1.3829",
+                "2025-09-05": "1.3829",
+                "2025-09-08": "1.3816",
+                "2025-09-09": "1.3833",
+                "2025-09-10": "1.3854",
+                "2025-09-11": "1.3844",
+                "2025-09-12": "1.3848",
+                "2025-09-15": "1.3804",
+                "2025-09-16": "1.3748",
+                "2025-09-17": "1.3760",
+                "2025-09-18": "1.3797",
+                "2025-09-19": "1.3788",
+                "2025-09-22": "1.3816",
+                "2025-09-23": "1.3832",
+                "2025-09-24": "1.3893",
+                "2025-09-25": "1.3927",
+                "2025-09-26": "1.3941"
+              },
+              "error": "There is no rate available for the last day in country. The date used for rates has been adjusted to the previous business day.",
+              "new_dates": {
+                "start": "2025-08-15",
+                "end": "2025-09-27"
+              }
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "start": "2025-08-15",
+            "end": "2025-09-29",
+            "result": {
+              "error": "There is no rate available for the last day in country. The date used for rates has been adjusted to the previous business day.",
+              "new_dates": {
+                "start": "2025-08-15",
+                "end": "2025-09-28"
+              }
+            }
+          },
+          {
+            "start": "2025-08-15",
+            "end": "2025-09-28",
+            "result": {
+              "code": null,
+              "name": "Euro",
+              "start": 1.6156,
+              "end": 1.6301,
+              "dates": {
+                "2025-08-15": "1.6156",
+                "2025-08-18": "1.6112",
+                "2025-08-19": "1.6154",
+                "2025-08-20": "1.6167",
+                "2025-08-21": "1.6147",
+                "2025-08-22": "1.6200",
+                "2025-08-25": "1.6141",
+                "2025-08-26": "1.6119",
+                "2025-08-27": "1.6050",
+                "2025-08-28": "1.6065",
+                "2025-08-29": "1.6062",
+                "2025-09-02": "1.6057",
+                "2025-09-03": "1.6089",
+                "2025-09-04": "1.6101",
+                "2025-09-05": "1.6224",
+                "2025-09-08": "1.6230",
+                "2025-09-09": "1.6217",
+                "2025-09-10": "1.6224",
+                "2025-09-11": "1.6239",
+                "2025-09-12": "1.6237",
+                "2025-09-15": "1.6240",
+                "2025-09-16": "1.6286",
+                "2025-09-17": "1.6305",
+                "2025-09-18": "1.6259",
+                "2025-09-19": "1.6199",
+                "2025-09-22": "1.6280",
+                "2025-09-23": "1.6325",
+                "2025-09-24": "1.6309",
+                "2025-09-25": "1.6263",
+                "2025-09-26": "1.6301"
+              },
+              "error": "There is no rate available for the last day in country. The date used for rates has been adjusted to the previous business day.",
+              "new_dates": {
+                "start": "2025-08-15",
+                "end": "2025-09-27"
+              }
+            }
+          }
+        ],
+        "GBP": [
+          {
+            "start": "2025-08-15",
+            "end": "2025-09-29",
+            "result": {
+              "error": "There is no rate available for the last day in country. The date used for rates has been adjusted to the previous business day.",
+              "new_dates": {
+                "start": "2025-08-15",
+                "end": "2025-09-28"
+              }
+            }
+          },
+          {
+            "start": "2025-08-15",
+            "end": "2025-09-28",
+            "result": {
+              "code": null,
+              "name": "British Pound",
+              "start": 1.872,
+              "end": 1.8675,
+              "dates": {
+                "2025-08-15": "1.8720",
+                "2025-08-18": "1.8671",
+                "2025-08-19": "1.8695",
+                "2025-08-20": "1.8673",
+                "2025-08-21": "1.8661",
+                "2025-08-22": "1.8703",
+                "2025-08-25": "1.8662",
+                "2025-08-26": "1.8652",
+                "2025-08-27": "1.8619",
+                "2025-08-28": "1.8590",
+                "2025-08-29": "1.8541",
+                "2025-09-02": "1.8454",
+                "2025-09-03": "1.8536",
+                "2025-09-04": "1.8572",
+                "2025-09-05": "1.8698",
+                "2025-09-08": "1.8709",
+                "2025-09-09": "1.8727",
+                "2025-09-10": "1.8760",
+                "2025-09-11": "1.8778",
+                "2025-09-12": "1.8772",
+                "2025-09-15": "1.8777",
+                "2025-09-16": "1.8771",
+                "2025-09-17": "1.8796",
+                "2025-09-18": "1.8711",
+                "2025-09-19": "1.8583",
+                "2025-09-22": "1.8662",
+                "2025-09-23": "1.8700",
+                "2025-09-24": "1.8683",
+                "2025-09-25": "1.8601",
+                "2025-09-26": "1.8675"
+              },
+              "error": "There is no rate available for the last day in country. The date used for rates has been adjusted to the previous business day.",
+              "new_dates": {
+                "start": "2025-08-15",
+                "end": "2025-09-27"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
