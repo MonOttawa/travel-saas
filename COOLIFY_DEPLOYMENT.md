@@ -68,25 +68,60 @@ The `docker-compose.yml` file is configured to use pre-built artifacts from the 
 
 ### 2.3 Configure Environment Variables
 
-This is the most critical step. Go to the **Environment Variables** tab for your new resource and add the following keys.
+This is the most critical step for a successful deployment. An incorrect or missing variable will cause the application to fail.
 
-**Important:** Mark sensitive values like API keys and database passwords as **"Is Secret"**.
+**Important:** In Coolify, mark sensitive values like API keys and database passwords as **"Is Secret"**.
 
-| Variable                                | Description                                                                                             | Example Value                               |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
-| `DB_USER`                               | The username for the PostgreSQL database.                                                               | `postgres`                                  |
-| `DB_PASSWORD`                           | A strong, secure password for the database.                                                             | `generate-a-secure-password`                |
-| `JWT_SECRET`                            | A unique, 32+ character string for signing authentication tokens.                                       | `generate-a-long-random-string`             |
-| `CLIENT_URL`                            | The public URL for your frontend application.                                                           | `https://app.yourdomain.com`                |
-| `SERVER_URL`                            | The public URL for your backend API.                                                                    | `https://api.yourdomain.com`                |
-| `STRIPE_API_KEY`                        | Your Stripe secret key (e.g., `sk_test_...`).                                                            | `sk_test_...`                               |
-| `STRIPE_WEBHOOK_SECRET`                 | The signing secret for your Stripe webhook.                                                             | `whsec_...`                                 |
-| `STRIPE_CUSTOMER_PORTAL_URL`            | The URL for the Stripe customer portal.                                                                 | `https://billing.stripe.com/p/login/...`    |
-| `PAYMENTS_HOBBY_SUBSCRIPTION_PLAN_ID`   | The Price ID from Stripe for your "Hobby" plan.                                                         | `price_...`                                 |
-| `PAYMENTS_PRO_SUBSCRIPTION_PLAN_ID`     | The Price ID from Stripe for your "Pro" plan.                                                           | `price_...`                                 |
-| `PAYMENTS_CREDITS_10_PLAN_ID`           | The Price ID from Stripe for your one-time credits pack.                                                | `price_...`                                 |
-| `ADMIN_EMAILS`                          | A comma-separated list of emails for users who should have admin privileges.                            | `your-email@example.com`                    |
-| `SENDGRID_API_KEY`                      | Your SendGrid API key for sending emails.                                                               | `SG....`                                    |
+#### Quick Demo Configuration
+
+For a quick start or demonstration, you can use the following configuration. **Remember to replace the bracketed values (`<... >`) with your actual information.**
+
+```env
+# Database
+DB_USER=postgres
+DB_PASSWORD=<generate-a-secure-password>
+
+# Security
+JWT_SECRET=<generate-a-32-character-random-string>
+
+# URLs (Update with your domain)
+CLIENT_URL=https://app.<your-domain>.com
+SERVER_URL=https://api.<your-domain>.com
+
+# Stripe (Use your test keys)
+STRIPE_API_KEY=sk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+STRIPE_CUSTOMER_PORTAL_URL=https://billing.stripe.com/p/login/...
+
+# Payment Plans (Use dummy IDs for demo)
+PAYMENTS_HOBBY_SUBSCRIPTION_PLAN_ID=price_hobby_test
+PAYMENTS_PRO_SUBSCRIPTION_PLAN_ID=price_pro_test
+PAYMENTS_CREDITS_10_PLAN_ID=price_credits_test
+
+# Admin
+ADMIN_EMAILS=<your-email>@example.com
+
+# Email (Optional for demo)
+SENDGRID_API_KEY=dummy
+```
+
+#### Detailed Variable Reference
+
+| Variable                                | Description                                                                                             | How to get the value                                                                    |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `DB_USER`                               | The username for the PostgreSQL database.                                                               | Can be left as `postgres`.                                                              |
+| `DB_PASSWORD`                           | A strong, secure password for the database.                                                             | Generate a secure password (e.g., using a password manager).                            |
+| `JWT_SECRET`                            | A unique, 32+ character string for signing authentication tokens.                                       | Generate a long, random string.                                                         |
+| `CLIENT_URL`                            | The public URL for your frontend application. **Must be correct for links to work.**                    | `https://app.your-domain.com`                                                           |
+| `SERVER_URL`                            | The public URL for your backend API. **Must be correct for the client to function.**                    | `https://api.your-domain.com`                                                           |
+| `STRIPE_API_KEY`                        | Your Stripe secret key. Found in your Stripe Dashboard under **Developers > API keys**.                   | `sk_test_...` (for testing) or `sk_live_...` (for production).                          |
+| `STRIPE_WEBHOOK_SECRET`                 | The signing secret for your Stripe webhook. Generated when you create a webhook endpoint.               | `whsec_...`                                                                             |
+| `STRIPE_CUSTOMER_PORTAL_URL`            | The URL for the Stripe customer portal. Found in your Stripe Dashboard under **Settings > Customer portal**. | `https://billing.stripe.com/p/login/...`                                                |
+| `PAYMENTS_HOBBY_SUBSCRIPTION_PLAN_ID`   | The Price ID from Stripe for your "Hobby" plan.                                                         | Create a product in Stripe and get the Price ID (`price_...`).                          |
+| `PAYMENTS_PRO_SUBSCRIPTION_PLAN_ID`     | The Price ID from Stripe for your "Pro" plan.                                                           | Create a product in Stripe and get the Price ID (`price_...`).                          |
+| `PAYMENTS_CREDITS_10_PLAN_ID`           | The Price ID from Stripe for your one-time credits pack.                                                | Create a product in Stripe and get the Price ID (`price_...`).                          |
+| `ADMIN_EMAILS`                          | A comma-separated list of emails for users who should have admin privileges upon signup.                | `your-email@example.com,another-admin@example.com`                                      |
+| `SENDGRID_API_KEY`                      | Your SendGrid API key for sending emails. If left as `dummy`, emails will be logged to the console.     | Get from your SendGrid account, or use `dummy` for testing.                             |
 
 ### 2.4 Configure Networking and Domains
 
@@ -101,12 +136,7 @@ Coolify needs to know which domains point to which services.
 
 ### 3.1 Trigger a Deployment
 
-Once everything is configured, click the **Deploy** button. Coolify will:
-1.  Clone your repository.
-2.  Build the Docker images for the `server` and `client` based on your `docker-compose.yml`.
-3.  Start the services.
-
-Monitor the **Deployment Logs** for any errors.
+Once everything is configured, click the **Deploy** button. Monitor the **Deployment Logs** for any errors.
 
 ### 3.2 Verify the Deployment
 
@@ -134,9 +164,7 @@ Stripe needs to send events to your backend to confirm payments and manage subsc
 
 ## 🔄 Step 5: Pushing Updates
 
-To update your application, simply push your code changes to the configured GitHub branch. If your changes require a new build (e.g., you modified frontend or backend code), remember to run `wasp build` locally and commit the results *before* pushing.
-
-Coolify will automatically detect the new commit and trigger a new deployment.
+To update your application, simply push your code changes to the configured GitHub branch. If your changes require a new build (e.g., you modified frontend or backend code), remember to run `wasp build` locally and commit the results *before* pushing. Coolify will automatically trigger a new deployment.
 
 ## 🔍 Troubleshooting
 
@@ -147,7 +175,7 @@ Coolify will automatically detect the new commit and trigger a new deployment.
 -   **502 Bad Gateway Error:**
     -   This usually means the `server` or `client` service failed to start.
     -   Check the container logs in Coolify for your `server` and `client` services to diagnose the issue.
-    -   Verify that all environment variables are set correctly.
+    -   Verify that all environment variables are set correctly and that the `SERVER_URL` and `CLIENT_URL` are reachable.
 
 -   **Database Connection Issues:**
     -   Ensure the `DB_USER` and `DB_PASSWORD` variables are correct.
