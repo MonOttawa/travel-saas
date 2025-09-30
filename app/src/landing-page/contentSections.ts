@@ -68,20 +68,33 @@ export const testimonials = [
 export const faqs = [
   {
     id: 1,
-    question: 'Where do the rates come from?',
+    question: 'What do I get beyond a spreadsheet or manual lookup?',
     answer:
-      'Per diem values follow the National Joint Council (NJC) directives and government accommodation schedules. Mileage rates are updated per province.',
+      'The estimator automatically syncs NJC meal allowances, kilometric rates, and PWGSC accommodation guidance so every figure is policy-compliant the moment you enter it. Instead of maintaining tabs and formulas, you walk through four guided steps and export finance-ready summaries in minutes.',
   },
   {
     id: 2,
-    question: 'Can I export estimates?',
-    answer: 'Yes. Download PDF or CSV summaries for your approval packages and audit trail.',
+    question: 'How much time can we expect to save each month?',
+    answer:
+      'Teams running 8–10 itineraries a month see planning time drop from 45 minutes per trip to under 10 minutes. That’s five or more hours saved every month—often more than the cost of a subscription in the first week.',
   },
   {
     id: 3,
     question: 'Do you support teams?',
     answer:
-      'Invite colleagues, assign roles, and monitor credit usage. Stripe billing supports both subscriptions and pay-per-credit models.',
+      'Yes. Invite colleagues, assign approver/requester roles, and track usage in real time. You can start with pay-per-credit billing and graduate to subscriptions as your volume grows—no hidden fees.',
+  },
+  {
+    id: 4,
+    question: 'How do approvals and finance benefit?',
+    answer:
+      'Approvers see policy citations and contextual notes alongside every number, so they can sign off faster. Finance teams receive clean PDFs and CSVs that drop directly into audit logs or ERP uploads, no reformatting required.',
+  },
+  {
+    id: 5,
+    question: 'What happens when directives change?',
+    answer:
+      'You don’t have to chase updates. We monitor NJC and PWGSC changes and refresh the datasets automatically. When you open the estimator, you’re already working with the latest per diem caps, mileage allowances, and accommodation limits.',
   },
 ];
 
