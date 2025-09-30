@@ -16,9 +16,9 @@ const formatCurrency = (amount: number | null | undefined, currency = 'CAD') => 
   }).format(amount);
 };
 
-const formatDate = (value?: string | null) => {
+const formatDate = (value?: string | Date | null) => {
   if (!value) return '—';
-  const date = new Date(value);
+  const date = typeof value === 'string' ? new Date(value) : value;
   if (Number.isNaN(date.getTime())) return '—';
   return new Intl.DateTimeFormat('en-CA', { dateStyle: 'medium', timeStyle: 'short' }).format(date);
 };
@@ -34,8 +34,9 @@ export default function EstimatesHistoryPage() {
   const { data: user } = useAuth();
   const estimatesQuery = useQuery(getTravelEstimates, undefined, { enabled: Boolean(user) });
   const estimates = (estimatesQuery.data as TravelEstimate[] | undefined) ?? [];
-  const isLoading = estimatesQuery.status === 'loading' || estimatesQuery.status === 'idle';
-  const hasError = estimatesQuery.status === 'error';
+  const status = estimatesQuery.status;
+  const isLoading = status === 'loading';
+  const hasError = status === 'error';
 
   return (
     <div className='bg-background text-foreground'>
@@ -90,36 +91,42 @@ export default function EstimatesHistoryPage() {
                 <p className='text-sm text-muted-foreground'>Run your first estimate to see it appear here.</p>
               ) : (
                 <div className='space-y-4'>
-                  {estimates.map((estimate) => (
-                    <div
-                      key={estimate.id}
-                      className='flex flex-col gap-3 rounded-xl border border-border/50 bg-background/80 p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between'
-                    >
-                      <div className='space-y-1'>
-                        <p className='text-sm font-semibold text-foreground'>{formatTrip(estimate.origin, estimate.destination)}</p>
-                        <div className='flex flex-wrap items-center gap-2 text-xs text-muted-foreground'>
-                          <span>{formatDate(estimate.createdAt)}</span>
-                          <span>•</span>
-                          <span>{estimate.travelMode === 'rental' ? 'Rental vehicle' : 'Personal vehicle'}</span>
-                          {estimate.days ? (
-                            <>
-                              <span>•</span>
-                              <span>{estimate.days} day{estimate.days === 1 ? '' : 's'}</span>
-                            </>
-                          ) : null}
+                  {estimates.map((estimate) => {
+                    const regionLabel = estimate.tripRegion === 'international' ? 'International' : 'Domestic';
+                    return (
+                      <div
+                        key={estimate.id}
+                        className='flex flex-col gap-3 rounded-xl border border-border/50 bg-background/80 p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between'
+                      >
+                        <div className='space-y-1'>
+                          <p className='text-sm font-semibold text-foreground'>{formatTrip(estimate.origin, estimate.destination)}</p>
+                          <div className='flex flex-wrap items-center gap-2 text-xs text-muted-foreground'>
+                            <span>{formatDate(estimate.createdAt)}</span>
+                            <span>•</span>
+                            <span>{estimate.travelMode === 'rental' ? 'Rental vehicle' : 'Personal vehicle'}</span>
+                            <span>•</span>
+                            <span>{regionLabel}</span>
+                            {estimate.days ? (
+                              <>
+                                <span>•</span>
+                                <span>{estimate.days} day{estimate.days === 1 ? '' : 's'}</span>
+                              </>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className='flex items-center gap-3'>
+                          <Badge variant='outline'>{regionLabel}</Badge>
+                          {estimate.includeHotel && <Badge variant='outline'>Hotel</Badge>}
+                          {estimate.includeIncidentals && <Badge variant='outline'>Incidentals</Badge>}
+                          {estimate.includeOneTimeExtras && <Badge variant='outline'>Extras</Badge>}
+                          <div className='text-right'>
+                            <p className='text-sm font-semibold text-foreground'>{formatCurrency(estimate.grandTotal)}</p>
+                            <p className='text-xs text-muted-foreground'>Total estimate</p>
+                          </div>
                         </div>
                       </div>
-                      <div className='flex items-center gap-3'>
-                        {estimate.includeHotel && <Badge variant='outline'>Hotel</Badge>}
-                        {estimate.includeIncidentals && <Badge variant='outline'>Incidentals</Badge>}
-                        {estimate.includeOneTimeExtras && <Badge variant='outline'>Extras</Badge>}
-                        <div className='text-right'>
-                          <p className='text-sm font-semibold text-foreground'>{formatCurrency(estimate.grandTotal)}</p>
-                          <p className='text-xs text-muted-foreground'>Total estimate</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               )}
             </CardContent>

@@ -4,6 +4,7 @@ import { HttpError } from 'wasp/server';
 import { ensureArgsSchemaOrThrowHttpError } from '../server/validation';
 
 const travelModeSchema = z.enum(['personal', 'rental']);
+const tripRegionSchema = z.enum(['domestic', 'international']);
 
 const totalsSchema = z.object({
   transportation: z.number(),
@@ -21,6 +22,7 @@ const createTravelEstimateSchema = z.object({
   destination: z.string().trim().optional().nullable(),
   startDate: z.string().trim().optional().nullable(),
   returnDate: z.string().trim().optional().nullable(),
+  tripRegion: tripRegionSchema,
   travelMode: travelModeSchema,
   distance: z.number().optional().nullable(),
   days: z.number().optional().nullable(),
@@ -52,6 +54,7 @@ export const createTravelEstimate: CreateTravelEstimate<CreateTravelEstimateInpu
       destination: input.destination ?? null,
       startDate: input.startDate ?? null,
       returnDate: input.returnDate ?? null,
+      tripRegion: input.tripRegion,
       travelMode: input.travelMode,
       distance: input.distance ?? null,
       days: input.days ?? null,

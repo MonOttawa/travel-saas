@@ -43,6 +43,9 @@ const DEFAULT_RENTAL_DAILY_RATE = carRentalReference.averageDailyRate
   : '85';
 const RECENT_ESTIMATES_LIMIT = 5;
 
+type TripRegion = 'domestic' | 'international';
+type SummaryRow = { label: string; value: string };
+type CityWithCoordinates = CitySuggestion & { lat: number; lon: number };
 const ONBOARDING_STEP_INFO = [
   {
     title: 'Trip basics',
@@ -65,6 +68,7 @@ const ONBOARDING_STEP_INFO = [
 type TravelMode = 'personal' | 'rental';
 
 const INITIAL_ESTIMATE = {
+  tripRegion: 'domestic' as TripRegion,
   origin: '',
   destination: '',
   startDate: '',
@@ -180,11 +184,8 @@ interface EstimateResults {
   destination: string;
   startDate: string;
   returnDate: string;
+  tripRegion: TripRegion;
 }
-
-type SummaryRow = { label: string; value: string };
-
-type CityWithCoordinates = CitySuggestion & { lat: number; lon: number };
 
 function hasCityCoordinates(city: CitySuggestion | null): city is CityWithCoordinates {
   return Boolean(city && typeof city.lat === 'number' && typeof city.lon === 'number');
@@ -254,7 +255,7 @@ export default function TravelEstimatorPage() {
   });
   const travelEstimates = (travelEstimatesQuery.data as TravelEstimate[] | undefined) ?? [];
   const recentEstimates = travelEstimates.slice(0, RECENT_ESTIMATES_LIMIT);
-  const isHistoryLoading = travelEstimatesQuery.status === 'loading' || travelEstimatesQuery.status === 'idle';
+  const isHistoryLoading = travelEstimatesQuery.status === 'loading';
   const historyError = travelEstimatesQuery.status === 'error' ? travelEstimatesQuery.error : null;
   const refetchTravelEstimates = travelEstimatesQuery.refetch;
   const [estimate, setEstimate] = useState(() => ({ ...INITIAL_ESTIMATE }));
@@ -272,6 +273,7 @@ export default function TravelEstimatorPage() {
   }, [originSuggestion, destinationSuggestion]);
   const originHasCoordinates = hasCityCoordinates(originSuggestion);
   const destinationHasCoordinates = hasCityCoordinates(destinationSuggestion);
+  const isInternational = estimate.tripRegion === 'international';
   const requiresManualDistance =
     estimate.travelMode === 'personal' &&
     ((originSuggestion && !originHasCoordinates) || (destinationSuggestion && !destinationHasCoordinates));
@@ -466,9 +468,12 @@ export default function TravelEstimatorPage() {
       ? rentalDays * rentalDailyRate
       : (distance * kilometricRate) / 100;
 
-    const transportationDetail = isRentalMode
+    const baseTransportationDetail = isRentalMode
       ? `${rentalDays || 0} day${rentalDays === 1 ? '' : 's'} × ${formatCurrency(rentalDailyRate)}/day`
       : `${Math.max(distance, 0).toFixed(0)} km × ${formatCurrency(kilometricRate / 100)}/km`;
+    const transportationDetail = estimate.tripRegion === 'international'
+      ? `${baseTransportationDetail} (international rates coming soon)`
+      : baseTransportationDetail;
 
     const mealBreakdown = calculateMealAllowance(days);
     const meals = mealBreakdown.total;
@@ -513,6 +518,7 @@ export default function TravelEstimatorPage() {
       destination: estimate.destination,
       startDate: estimate.startDate,
       returnDate: estimate.returnDate,
+      tripRegion: estimate.tripRegion,
     };
 
     setResults(nextResults);
@@ -524,6 +530,7 @@ export default function TravelEstimatorPage() {
         destination: nextResults.destination,
         startDate: nextResults.startDate,
         returnDate: nextResults.returnDate,
+        tripRegion: nextResults.tripRegion,
         travelMode: nextResults.travelMode,
         distance: Number.isFinite(nextResults.distance) ? nextResults.distance : null,
         days: Number.isFinite(nextResults.days) ? nextResults.days : null,
@@ -545,6 +552,7 @@ export default function TravelEstimatorPage() {
           mealEffectiveDate: nextResults.mealEffectiveDate,
           kilometricRateLabel: nextResults.kilometricRateLabel,
           kilometricRateAbbreviation: nextResults.kilometricRateAbbreviation,
+          tripRegion: nextResults.tripRegion,
         },
       };
 
@@ -567,12 +575,12 @@ export default function TravelEstimatorPage() {
     return new Intl.DateTimeFormat('en-CA', { dateStyle: 'medium' }).format(date);
   };
 
-  const formatTimestamp = (iso?: string | null) => {
-    if (!iso) return '—';
-    const date = new Date(iso);
-    if (Number.isNaN(date.getTime())) return '—';
-    return new Intl.DateTimeFormat('en-CA', { dateStyle: 'medium', timeStyle: 'short' }).format(date);
-  };
+const formatTimestamp = (value?: string | Date | null) => {
+  if (!value) return '—';
+  const date = typeof value === 'string' ? new Date(value) : value;
+  if (Number.isNaN(date.getTime())) return '—';
+  return new Intl.DateTimeFormat('en-CA', { dateStyle: 'medium', timeStyle: 'short' }).format(date);
+};
 
   const buildSummaryRows = (resultsForRow: EstimateResults): SummaryRow[] => {
     const rows: SummaryRow[] = [
@@ -582,16 +590,28 @@ export default function TravelEstimatorPage() {
         label: 'Travel dates',
         value: `${formatDisplayDate(resultsForRow.startDate)} → ${formatDisplayDate(resultsForRow.returnDate)}`,
       },
-      { label: 'Travel days', value: resultsForRow.days.toString() },
       {
-        label: 'Transportation mode',
-        value: resultsForRow.travelMode === 'rental' ? 'Rental car' : 'Personal vehicle',
+        label: 'Trip region',
+        value: resultsForRow.tripRegion === 'international' ? 'International' : 'Domestic',
       },
-      { label: 'Transportation detail', value: resultsForRow.transportationDetail },
-      { label: 'Transportation cost', value: formatCurrency(resultsForRow.transportation) },
     ];
 
-    if (resultsForRow.travelMode === 'personal') {
+    if (resultsForRow.tripRegion === 'international') {
+      rows.push({
+        label: 'International rates',
+        value: 'International meal and flight automation coming soon – current totals reuse domestic allowances.',
+      });
+    }
+
+    rows.push({ label: 'Travel days', value: resultsForRow.days.toString() });
+    rows.push({
+      label: 'Transportation mode',
+      value: resultsForRow.travelMode === 'rental' ? 'Rental car' : 'Personal vehicle',
+    });
+    rows.push({ label: 'Transportation detail', value: resultsForRow.transportationDetail });
+    rows.push({ label: 'Transportation cost', value: formatCurrency(resultsForRow.transportation) });
+
+    if (resultsForRow.travelMode === 'personal' && resultsForRow.tripRegion === 'domestic') {
       const effective = kilometricEffectiveLabel ?? kilometricRatesEffectiveDate ?? null;
       const labelParts = [
         `${resultsForRow.kilometricRateLabel} — ${formatCurrency(resultsForRow.kilometricRateCents / 100)}/km`,
@@ -600,20 +620,27 @@ export default function TravelEstimatorPage() {
       rows.push({ label: 'Kilometric rate', value: labelParts.join(' · ') });
     }
 
-    const mealBreakdownText = resultsForRow.mealBreakdown.segments
-      .map((segment) => `${segment.days} × ${formatCurrency(segment.rate)}`)
-      .join(' + ');
-    const mealEffective = resultsForRow.mealEffectiveDate
-      ? formatIsoDate(resultsForRow.mealEffectiveDate) ?? resultsForRow.mealEffectiveDate
-      : mealEffectiveLabel;
-    const mealValueParts = [
-      formatCurrency(resultsForRow.meals),
-      mealBreakdownText || null,
-      mealEffective ? `effective ${mealEffective}` : null,
-    ]
-      .filter(Boolean)
-      .join(' · ');
-    rows.push({ label: 'Meals per diem', value: mealValueParts });
+    if (resultsForRow.tripRegion === 'international') {
+      rows.push({
+        label: 'Meals per diem',
+        value: 'International meal breakdown coming soon (currently using domestic allowances).',
+      });
+    } else {
+      const mealBreakdownText = resultsForRow.mealBreakdown.segments
+        .map((segment) => `${segment.days} × ${formatCurrency(segment.rate)}`)
+        .join(' + ');
+      const mealEffective = resultsForRow.mealEffectiveDate
+        ? formatIsoDate(resultsForRow.mealEffectiveDate) ?? resultsForRow.mealEffectiveDate
+        : mealEffectiveLabel;
+      const mealValueParts = [
+        formatCurrency(resultsForRow.meals),
+        mealBreakdownText || null,
+        mealEffective ? `effective ${mealEffective}` : null,
+      ]
+        .filter(Boolean)
+        .join(' · ');
+      rows.push({ label: 'Meals per diem', value: mealValueParts });
+    }
 
     rows.push({
       label: 'Exchange rates reference',
@@ -1032,6 +1059,33 @@ export default function TravelEstimatorPage() {
       case 0:
         return (
           <>
+            <div className='space-y-2'>
+              <Label htmlFor='trip-region'>Trip region</Label>
+              <Select
+                value={estimate.tripRegion}
+                onValueChange={(value) =>
+                  setEstimate((prev) => ({
+                    ...prev,
+                    tripRegion: value as TripRegion,
+                  }))
+                }
+              >
+                <SelectTrigger id='trip-region'>
+                  <SelectValue placeholder='Select trip region' />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value='domestic'>Domestic (Canada / USA)</SelectItem>
+                  <SelectItem value='international'>International (Appendix D)</SelectItem>
+                </SelectContent>
+              </Select>
+              {isInternational ? (
+                <p className='text-xs text-amber-600 dark:text-amber-500'>
+                  International meal breakdown and flight tooling are coming soon. Current calculations reuse domestic limits until the Appendix D dataset is finalized.
+                </p>
+              ) : (
+                <p className='text-xs text-muted-foreground'>Use domestic rates for Canadian travel and US mileage allowances.</p>
+              )}
+            </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
               <CityAutocomplete
                 id='origin'
@@ -1128,6 +1182,11 @@ export default function TravelEstimatorPage() {
                   );
                 })}
               </div>
+              {isInternational && (
+                <div className='rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800 dark:border-amber-600/40 dark:bg-amber-900/30 dark:text-amber-100'>
+                  International mileage and per diem automation is on the way. For now, estimates reuse domestic allowances so you can continue planning while Appendix D data is finalized.
+                </div>
+              )}
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
               <div className='space-y-2'>
@@ -1279,6 +1338,9 @@ export default function TravelEstimatorPage() {
                   {' per km'}
                   {kilometricEffectiveLabel ? ` · effective ${kilometricEffectiveLabel}` : ''}
                 </p>
+              )}
+              {isInternational && (
+                <p className='text-xs text-muted-foreground'>Kilometric rates are locked for international trips until the Appendix D integration ships.</p>
               )}
             </div>
           </>
@@ -1677,26 +1739,39 @@ export default function TravelEstimatorPage() {
                 <p className='text-sm text-muted-foreground'>Run your first estimate and it will appear here.</p>
               ) : (
                 <ul className='space-y-4'>
-                  {recentEstimates.map((entry) => (
-                    <li
-                      key={entry.id}
-                      className='flex items-start justify-between gap-3 rounded-lg border border-border/60 bg-background/80 p-3 shadow-sm'
-                    >
-                      <div className='flex-1'>
-                        <p className='text-sm font-medium text-foreground'>
-                          {(entry.origin || '—')}
-                          {entry.destination ? ` → ${entry.destination}` : ''}
-                        </p>
-                        <p className='text-xs text-muted-foreground'>Generated {formatTimestamp(entry.createdAt)}</p>
-                      </div>
-                      <div className='text-right'>
-                        <p className='text-sm font-semibold text-foreground'>{formatCurrency(entry.grandTotal)}</p>
-                        <p className='text-xs capitalize text-muted-foreground'>
-                          {entry.travelMode === 'rental' ? 'Rental vehicle' : 'Personal vehicle'}
-                        </p>
-                      </div>
-                    </li>
-                  ))}
+                  {recentEstimates.map((entry) => {
+                    const regionLabel = entry.tripRegion === 'international' ? 'International' : 'Domestic';
+                    return (
+                      <li
+                        key={entry.id}
+                        className='flex items-start justify-between gap-3 rounded-lg border border-border/60 bg-background/80 p-3 shadow-sm'
+                      >
+                        <div className='flex-1'>
+                          <p className='text-sm font-medium text-foreground'>
+                            {(entry.origin || '—')}
+                            {entry.destination ? ` → ${entry.destination}` : ''}
+                          </p>
+                          <div className='flex flex-wrap items-center gap-2 text-xs text-muted-foreground'>
+                            <span>Generated {formatTimestamp(entry.createdAt)}</span>
+                            <span>•</span>
+                            <span>{regionLabel}</span>
+                          </div>
+                        </div>
+                        <div className='flex items-center gap-2 text-right'>
+                          <Badge variant='outline'>{regionLabel}</Badge>
+                          {entry.includeHotel && <Badge variant='outline'>Hotel</Badge>}
+                          {entry.includeIncidentals && <Badge variant='outline'>Incidentals</Badge>}
+                          {entry.includeOneTimeExtras && <Badge variant='outline'>Extras</Badge>}
+                          <div>
+                            <p className='text-sm font-semibold text-foreground'>{formatCurrency(entry.grandTotal)}</p>
+                            <p className='text-xs capitalize text-muted-foreground'>
+                              {entry.travelMode === 'rental' ? 'Rental vehicle' : 'Personal vehicle'}
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    );
+                  })}
                 </ul>
               )}
             </CardContent>

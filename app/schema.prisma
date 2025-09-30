@@ -136,6 +136,7 @@ model TravelEstimate {
   extrasPerDiemTotal        Float
   extrasOneTimeTotal        Float
   grandTotal                Float
+  tripRegion                String         @default("domestic")
 
   summary                   Json
   payload                   Json?
