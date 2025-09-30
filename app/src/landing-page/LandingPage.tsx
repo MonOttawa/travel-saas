@@ -1,11 +1,11 @@
-import ExamplesCarousel from './components/ExamplesCarousel';
 import FAQ from './components/FAQ';
 import FeaturesGrid from './components/FeaturesGrid';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Testimonials from './components/Testimonials';
 import AIReady from './ExampleHighlightedFeature';
-import { examples, faqs, features, footerNavigation, testimonials } from './contentSections';
+import ValueIndicators from './components/ValueIndicators';
+import { faqs, features, footerNavigation, testimonials } from './contentSections';
 import StepsShowcase from './components/StepsShowcase';
 
 export default function LandingPage() {
@@ -14,7 +14,7 @@ export default function LandingPage() {
       <main className='isolate'>
         <Hero />
         <StepsShowcase />
-        <ExamplesCarousel examples={examples} />
+        <ValueIndicators />
         <AIReady />
         <FeaturesGrid features={features} />
         <Testimonials testimonials={testimonials} />

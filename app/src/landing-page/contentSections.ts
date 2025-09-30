@@ -1,11 +1,4 @@
 import avatarPlaceholder from '../client/static/avatar-placeholder.webp';
-import kivo from '../client/static/examples/kivo.webp';
-import messync from '../client/static/examples/messync.webp';
-import microinfluencerClub from '../client/static/examples/microinfluencers.webp';
-import promptpanda from '../client/static/examples/promptpanda.webp';
-import reviewradar from '../client/static/examples/reviewradar.webp';
-import scribeist from '../client/static/examples/scribeist.webp';
-import searchcraft from '../client/static/examples/searchcraft.webp';
 import type { GridFeature } from './components/FeaturesGrid';
 
 export const features: GridFeature[] = [
@@ -104,48 +97,3 @@ export const footerNavigation = {
     { name: 'Terms', href: '#' },
   ],
 };
-
-export const examples = [
-  {
-    name: 'Regional Travel (ON → QC)',
-    description: 'Mileage + 2 days M&I with hotel cap guidance.',
-    imageSrc: kivo,
-    href: '#',
-  },
-  {
-    name: 'Ottawa Client Visit',
-    description: '1-day meetings with per diem and transport.',
-    imageSrc: messync,
-    href: '#',
-  },
-  {
-    name: 'Training Week',
-    description: '5 days out-of-town with nightly hotel cap.',
-    imageSrc: microinfluencerClub,
-    href: '#',
-  },
-  {
-    name: 'Team Offsite',
-    description: 'Group travel planning for finance review.',
-    imageSrc: promptpanda,
-    href: '#',
-  },
-  {
-    name: 'Field Audit Trip',
-    description: 'Mileage-heavy day trips across regions.',
-    imageSrc: reviewradar,
-    href: '#',
-  },
-  {
-    name: 'Conference Attendance',
-    description: 'Per diem + hotel for multi-day event.',
-    imageSrc: scribeist,
-    href: '#',
-  },
-  {
-    name: 'Public Sector Travel',
-    description: 'NJC-compliant estimates for approvals.',
-    imageSrc: searchcraft,
-    href: '#',
-  },
-];
