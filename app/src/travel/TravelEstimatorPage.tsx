@@ -611,10 +611,111 @@ export default function TravelEstimatorPage() {
 
   const openPdfPreview = () => {
     if (!results) return;
-    const tableRows = summaryRows
+    const escapeHtml = (value: string) =>
+      value
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+
+    const orderedRows = (labels: string[]) =>
+      labels
+        .map((label) => summaryRows.find((row) => row.label === label))
+        .filter((row): row is { label: string; value: string } => Boolean(row));
+
+    const overviewLabels = [
+      'Origin city',
+      'Destination city',
+      'Travel dates',
+      'Travel days',
+      'Transportation mode',
+      'Kilometric rate',
+      'Transportation detail',
+    ];
+    const costDetailLabels = [
+      'Transportation cost',
+      'Meals per diem',
+      'Hotel nights',
+      'Nightly rate',
+      'Hotel taxes & fees',
+      'Hotel total',
+      'Per-diem extras',
+      'One-time extras',
+      'Extras total',
+      'Rental daily rate',
+      'Rental days',
+      'Total estimate',
+    ];
+
+    const overviewRows = orderedRows(overviewLabels);
+    const costDetailRows = orderedRows(costDetailLabels);
+    const usedLabels = new Set([...overviewLabels, ...costDetailLabels]);
+    const additionalRows = summaryRows.filter((row) => !usedLabels.has(row.label));
+
+    const generatedOn = new Intl.DateTimeFormat('en-CA', {
+      dateStyle: 'medium',
+      timeStyle: 'short',
+    }).format(new Date());
+
+    const highlightCards = [
+      {
+        heading: 'Transportation',
+        value: formatCurrency(results.transportation),
+        detail: results.transportationDetail,
+      },
+      {
+        heading: 'Meals & incidentals',
+        value: formatCurrency(results.meals),
+      },
+      ...(results.hotel > 0
+        ? [
+            {
+              heading: 'Hotel',
+              value: formatCurrency(results.hotel),
+            },
+          ]
+        : []),
+      ...(results.extrasTotal > 0
+        ? [
+            {
+              heading: 'Extras',
+              value: formatCurrency(results.extrasTotal),
+            },
+          ]
+        : []),
+      {
+        heading: 'Total Estimate',
+        value: formatCurrency(results.total),
+        accent: true,
+      },
+    ];
+
+    const renderDefinitionList = (rows: { label: string; value: string }[]) =>
+      rows
+        .map(
+          (row) =>
+            `<div class="meta-item"><dt>${escapeHtml(row.label)}</dt><dd>${escapeHtml(row.value)}</dd></div>`
+        )
+        .join('');
+
+    const renderTableRows = (rows: { label: string; value: string }[]) =>
+      rows
+        .map(
+          (row) =>
+            `<tr><th>${escapeHtml(row.label)}</th><td>${escapeHtml(row.value)}</td></tr>`
+        )
+        .join('');
+
+    const cardHtml = highlightCards
       .map(
-        (row) =>
-          `<tr><th style="padding:8px 12px;text-align:left;border-bottom:1px solid #dbe1ef;background:#0f172a;color:#f8fafc;">${row.label}</th><td style="padding:8px 12px;border-bottom:1px solid #dbe1ef;color:#0f172a;">${row.value}</td></tr>`
+        (card) => `
+          <article class="cost-card${card.accent ? ' cost-card--accent' : ''}">
+            <p class="cost-card__heading">${escapeHtml(card.heading)}</p>
+            <p class="cost-card__value">${escapeHtml(card.value)}</p>
+            ${card.detail ? `<p class="cost-card__detail">${escapeHtml(card.detail)}</p>` : ''}
+          </article>
+        `
       )
       .join('');
 
@@ -622,18 +723,194 @@ export default function TravelEstimatorPage() {
       <html>
         <head>
           <meta charset="utf-8" />
-          <title>Travel Estimate</title>
+          <title>Travel Cost Estimate</title>
           <style>
-            body { font-family: Arial, Helvetica, sans-serif; padding: 32px; background: #f8fafc; color: #0f172a; }
-            h1 { font-size: 22px; margin-bottom: 18px; }
-            table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 14px; overflow: hidden; box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12); }
-            th, td { font-size: 14px; }
-            tfoot td { font-weight: 700; }
+            :root {
+              color-scheme: light;
+              font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            }
+            body {
+              background: #edf1f8;
+              color: #0f172a;
+              margin: 0;
+              padding: 40px;
+            }
+            .report {
+              max-width: 960px;
+              margin: 0 auto;
+              background: #ffffff;
+              border-radius: 28px;
+              overflow: hidden;
+              box-shadow: 0 25px 70px -35px rgba(15, 23, 42, 0.4);
+            }
+            header {
+              padding: 32px 36px;
+              background: linear-gradient(135deg, #0f172a, #1e3a8a);
+              color: #f8fafc;
+              display: flex;
+              flex-wrap: wrap;
+              align-items: baseline;
+              gap: 12px;
+              justify-content: space-between;
+            }
+            header h1 {
+              margin: 0;
+              font-size: 26px;
+              font-weight: 600;
+            }
+            header span {
+              font-size: 13px;
+              opacity: 0.85;
+            }
+            section {
+              padding: 32px 36px;
+            }
+            section + section {
+              border-top: 1px solid #e2e8f0;
+            }
+            .section-title {
+              font-size: 18px;
+              font-weight: 600;
+              margin-bottom: 18px;
+            }
+            .meta-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+              gap: 18px;
+            }
+            .meta-item dt {
+              font-size: 12px;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+              color: #6b7280;
+              margin-bottom: 6px;
+            }
+            .meta-item dd {
+              margin: 0;
+              font-size: 15px;
+              font-weight: 500;
+            }
+            .cost-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+              gap: 16px;
+            }
+            .cost-card {
+              border-radius: 18px;
+              background: #f1f5f9;
+              padding: 18px 20px;
+              border: 1px solid rgba(15, 23, 42, 0.08);
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+            }
+            .cost-card--accent {
+              background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+              color: #f8fafc;
+              border: none;
+              box-shadow: 0 20px 35px -25px rgba(37, 99, 235, 0.7);
+            }
+            .cost-card__heading {
+              font-size: 13px;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+              margin: 0;
+            }
+            .cost-card__value {
+              font-size: 24px;
+              font-weight: 600;
+              margin: 0;
+            }
+            .cost-card__detail {
+              font-size: 12px;
+              margin: 0;
+              opacity: 0.8;
+            }
+            table.detail-table {
+              width: 100%;
+              border-collapse: collapse;
+              border: 1px solid #e2e8f0;
+              border-radius: 16px;
+              overflow: hidden;
+            }
+            table.detail-table th,
+            table.detail-table td {
+              padding: 14px 18px;
+              font-size: 13px;
+            }
+            table.detail-table th {
+              background: #f8fafc;
+              text-align: left;
+              width: 32%;
+              letter-spacing: 0.06em;
+              text-transform: uppercase;
+              font-weight: 600;
+              color: #475569;
+            }
+            table.detail-table tr + tr th,
+            table.detail-table tr + tr td {
+              border-top: 1px solid #e2e8f0;
+            }
+            table.detail-table td {
+              color: #0f172a;
+              font-weight: 500;
+            }
+            footer {
+              padding: 24px 36px 36px;
+              font-size: 12px;
+              color: #64748b;
+            }
+            @media (max-width: 768px) {
+              body {
+                padding: 16px;
+              }
+              header,
+              section,
+              footer {
+                padding: 24px 24px;
+              }
+              .cost-card__value {
+                font-size: 20px;
+              }
+            }
+            @media print {
+              body {
+                background: #ffffff;
+                padding: 16px;
+              }
+              .report {
+                box-shadow: none;
+              }
+            }
           </style>
         </head>
         <body>
-          <h1>Travel Cost Estimate</h1>
-          <table>${tableRows}</table>
+          <div class="report">
+            <header>
+              <h1>Travel Cost Estimate</h1>
+              <span>Generated ${escapeHtml(generatedOn)}</span>
+            </header>
+            ${overviewRows.length
+              ? `<section><p class="section-title">Trip overview</p><dl class="meta-grid">${renderDefinitionList(
+                  overviewRows,
+                )}</dl></section>`
+              : ''}
+            <section>
+              <p class="section-title">Cost highlights</p>
+              <div class="cost-grid">${cardHtml}</div>
+            </section>
+            ${costDetailRows.length
+              ? `<section><p class="section-title">Detailed costs</p><table class="detail-table"><tbody>${renderTableRows(
+                  costDetailRows,
+                )}</tbody></table></section>`
+              : ''}
+            ${additionalRows.length
+              ? `<section><p class="section-title">Additional details</p><table class="detail-table"><tbody>${renderTableRows(
+                  additionalRows,
+                )}</tbody></table></section>`
+              : ''}
+            <footer>Verify rates against current Treasury Board directives before submission. Generated by the Travel Cost Estimator.</footer>
+          </div>
           <script>window.onload = () => { window.print(); };</script>
         </body>
       </html>`;
