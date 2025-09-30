@@ -23,8 +23,8 @@ const STEPS = [
 
 export default function StepsShowcase() {
   return (
-    <section className='relative overflow-hidden bg-secondary/5 py-20 sm:py-24'>
-      <div className='absolute inset-y-0 left-1/2 w-[120%] -translate-x-1/2 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-70 blur-3xl' />
+    <section className='relative overflow-hidden bg-secondary/5 py-16 sm:py-20 lg:py-24'>
+      <div className='absolute inset-y-0 left-1/2 hidden w-[120%] -translate-x-1/2 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-60 blur-3xl lg:block' />
       <div className='container relative z-10 mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='mx-auto max-w-3xl text-center'>
           <p className='inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-primary'>
@@ -38,13 +38,13 @@ export default function StepsShowcase() {
           </p>
         </div>
 
-        <div className='relative mt-16 lg:mt-20'>
-          <div className='hidden lg:block absolute left-[6%] right-[6%] top-11 h-px bg-gradient-to-r from-primary/10 via-primary/40 to-primary/10' />
-          <ol className='grid gap-8 lg:grid-cols-4'>
+        <div className='relative mt-12 sm:mt-14 lg:mt-18'>
+          <div className='absolute left-[10%] right-[10%] top-11 hidden h-px bg-gradient-to-r from-primary/10 via-primary/40 to-primary/10 xl:block' />
+          <ol className='grid gap-6 sm:grid-cols-2 xl:grid-cols-4'>
             {STEPS.map((step, index) => (
               <li
                 key={step.title}
-                className='relative flex flex-col gap-4 rounded-2xl border border-border/60 bg-background/80 p-6 shadow-[0_20px_45px_-25px_rgba(15,23,42,0.45)] backdrop-blur supports-[backdrop-filter]:bg-background/70'
+                className='relative flex h-full flex-col gap-4 rounded-2xl border border-border/50 bg-background/75 p-5 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.65)] backdrop-blur supports-[backdrop-filter]:bg-background/65 sm:p-6'
               >
                 <div className='flex items-center gap-3'>
                   <span className='flex h-10 w-10 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-base font-semibold text-primary'>
@@ -58,11 +58,11 @@ export default function StepsShowcase() {
           </ol>
         </div>
 
-        <div className='mt-14 flex flex-col items-center gap-4 sm:flex-row sm:justify-center'>
+        <div className='mt-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4'>
           <Button asChild size='lg' className='px-8'>
             <a href='/login'>Start an estimate</a>
           </Button>
-          <span className='text-sm text-muted-foreground'>No training required—just follow the four steps.</span>
+          <span className='text-sm text-muted-foreground sm:text-base'>No training required—just follow the four steps.</span>
         </div>
       </div>
     </section>

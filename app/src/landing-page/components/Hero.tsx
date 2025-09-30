@@ -4,26 +4,26 @@ import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/ca
 
 export default function Hero() {
   return (
-    <div className='relative pt-14 w-full'>
+    <div className='relative w-full pt-12 sm:pt-16 lg:pt-20'>
       <TopGradient />
       <BottomGradient />
-      <div className='md:p-24'>
-        <div className='mx-auto max-w-8xl px-6 lg:px-8'>
-          <div className='lg:mb-18 mx-auto max-w-3xl text-center'>
-            <h1 className='text-5xl font-bold tracking-tight text-foreground sm:text-6xl sm:leading-tight'>
+      <div className='py-16 sm:py-20'>
+        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+          <div className='mx-auto max-w-3xl text-center lg:mb-20'>
+            <h1 className='text-4xl font-bold tracking-tight text-foreground sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight'>
               Government Travel Cost <span className='text-gradient-primary'>Estimator</span>
             </h1>
-            <p className='mt-6 mx-auto max-w-2xl text-lg leading-7 text-muted-foreground sm:text-xl sm:leading-8'>
+            <p className='mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8'>
               Calculate per diem, mileage, and hotel caps using official Canadian rates (NJC, PWGSC). Export-ready totals in seconds.
             </p>
-            <div className='mt-10 flex items-center justify-center gap-x-6'>
-              <Button size='lg' variant='outline' asChild>
-                <WaspRouterLink to={routes.PricingPageRoute.to}>See Pricing</WaspRouterLink>
-              </Button>
-              <Button size='lg' variant='default' asChild>
+            <div className='mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4'>
+              <Button size='lg' variant='default' asChild className='w-full sm:w-auto'>
                 <WaspRouterLink to={routes.EstimatorRoute.to}>
                   Get Started <span aria-hidden='true'>→</span>
                 </WaspRouterLink>
+              </Button>
+              <Button size='lg' variant='outline' asChild className='w-full sm:w-auto'>
+                <WaspRouterLink to={routes.PricingPageRoute.to}>See Pricing</WaspRouterLink>
               </Button>
             </div>
           </div>
@@ -68,19 +68,19 @@ function BottomGradient() {
 
 function HeroPreview() {
   return (
-    <div className='mt-14 hidden md:block'>
+    <div className='mx-auto mt-12 max-w-4xl px-4 sm:px-6 md:mt-14 md:px-0'>
       <div className='relative mx-auto max-w-4xl p-[1px] rounded-[28px] bg-gradient-to-br from-primary/20 via-secondary/30 to-primary/10 shadow-2xl'>
-        <div className='rounded-[26px] bg-background/95 dark:bg-card/95 backdrop-blur-md border border-border/60 p-8 flex flex-col gap-8 sm:flex-row sm:items-center'>
-          <div className='flex-1 space-y-4'>
+        <div className='flex flex-col gap-6 rounded-[26px] border border-border/60 bg-background/95 p-6 backdrop-blur-md dark:bg-card/95 sm:p-8 lg:flex-row lg:items-center lg:gap-10'>
+          <div className='flex-1 space-y-4 sm:space-y-5'>
             <span className='inline-flex items-center rounded-full bg-secondary-muted/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-secondary-foreground'>
               Sample estimate
             </span>
-            <h3 className='text-2xl font-semibold tracking-tight text-foreground'>Ottawa Client Visit</h3>
-            <p className='text-sm text-muted-foreground leading-6 max-w-sm'>
+            <h3 className='text-xl font-semibold tracking-tight text-foreground sm:text-2xl'>Ottawa Client Visit</h3>
+            <p className='max-w-md text-sm leading-6 text-muted-foreground sm:text-base'>
               Two-day trip from Toronto to Ottawa. Includes mileage, per diem, and nightly accommodation cap sourced from the
               latest NJC directive.
             </p>
-            <dl className='grid grid-cols-2 gap-4 max-w-md text-sm'>
+            <dl className='grid grid-cols-2 gap-4 text-sm sm:max-w-md'>
               <div>
                 <dt className='text-muted-foreground'>Origin</dt>
                 <dd className='font-semibold text-foreground'>Toronto, ON</dd>
@@ -99,7 +99,7 @@ function HeroPreview() {
               </div>
             </dl>
           </div>
-          <Card className='w-full sm:w-[280px] bg-card/90 border-border/70 shadow-lg'>
+          <Card className='w-full bg-card/95 shadow-lg sm:w-[280px]'>
             <CardHeader className='pb-2'>
               <CardTitle className='text-base font-semibold tracking-tight text-foreground'>Estimate breakdown</CardTitle>
             </CardHeader>
