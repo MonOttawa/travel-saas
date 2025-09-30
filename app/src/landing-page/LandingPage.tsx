@@ -6,12 +6,14 @@ import Hero from './components/Hero';
 import Testimonials from './components/Testimonials';
 import AIReady from './ExampleHighlightedFeature';
 import { examples, faqs, features, footerNavigation, testimonials } from './contentSections';
+import StepsShowcase from './components/StepsShowcase';
 
 export default function LandingPage() {
   return (
     <div className='bg-background text-foreground'>
       <main className='isolate'>
         <Hero />
+        <StepsShowcase />
         <ExamplesCarousel examples={examples} />
         <AIReady />
         <FeaturesGrid features={features} />
@@ -22,4 +24,3 @@ export default function LandingPage() {
     </div>
   );
 }
-
