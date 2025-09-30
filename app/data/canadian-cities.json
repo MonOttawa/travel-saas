@@ -1,209 +1,209 @@
 {
-  "updatedAt": "2025-09-29T22:31:59.633Z",
+  "updatedAt": "2025-09-30T01:50:07.005Z",
   "cities": [
     {
       "city": "Acheson",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 53.55014,
+      "lon": -113.76874
     },
     {
       "city": "Ajax",
       "province": "ON",
-      "lat": 43.8509,
-      "lon": -79.0204
+      "lat": 43.85012,
+      "lon": -79.03288
     },
     {
       "city": "Alma",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 48.55009,
+      "lon": -71.6491
     },
     {
       "city": "Amherst",
       "province": "NS",
-      "lat": null,
-      "lon": null
+      "lat": 45.83345,
+      "lon": -64.19874
     },
     {
       "city": "Amos",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 48.56688,
+      "lon": -78.11624
     },
     {
       "city": "Amqui",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 48.46382,
+      "lon": -67.43134
     },
     {
       "city": "Angus",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.31681,
+      "lon": -79.88295
     },
     {
       "city": "Antigonish",
       "province": "NS",
-      "lat": null,
-      "lon": null
+      "lat": 45.61685,
+      "lon": -61.99858
     },
     {
       "city": "Athabasca",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 54.71687,
+      "lon": -113.28537
     },
     {
       "city": "Baie-Comeau",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 49.21679,
+      "lon": -68.14894
     },
     {
       "city": "Banff",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 51.17622,
+      "lon": -115.56982
     },
     {
       "city": "Barrie",
       "province": "ON",
-      "lat": 44.3894,
-      "lon": -79.6903
+      "lat": 44.40011,
+      "lon": -79.66634
     },
     {
       "city": "Bassano",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 50.78998,
+      "lon": -112.46805
     },
     {
       "city": "Bathurst",
       "province": "NB",
-      "lat": 47.6186,
-      "lon": -65.6504
+      "lat": 47.61814,
+      "lon": -65.65112
     },
     {
       "city": "Belleville",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.16682,
+      "lon": -77.38277
     },
     {
       "city": "Beresford",
       "province": "NB",
-      "lat": null,
-      "lon": null
+      "lat": 47.69128,
+      "lon": -65.69893
     },
     {
       "city": "Berthierville",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 46.08336,
+      "lon": -73.18245
     },
     {
       "city": "Blainville",
       "province": "QC",
-      "lat": 45.6722,
-      "lon": -73.8713
+      "lat": 45.66678,
+      "lon": -73.88249
     },
     {
       "city": "Blue River",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 52.11009,
+      "lon": -119.31049
     },
     {
       "city": "Bolton",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 43.87952,
+      "lon": -79.73791
     },
     {
       "city": "Bonnyville",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 54.26684,
+      "lon": -110.73505
     },
     {
       "city": "Bowmanville",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 43.91682,
+      "lon": -78.68286
     },
     {
       "city": "Bracebridge",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 45.03341,
+      "lon": -79.31633
     },
     {
       "city": "Brampton",
       "province": "ON",
-      "lat": 43.7315,
-      "lon": -79.7624
+      "lat": 43.68341,
+      "lon": -79.76633
     },
     {
       "city": "Brandon",
       "province": "MB",
-      "lat": 49.8442,
-      "lon": -99.961
+      "lat": 49.84692,
+      "lon": -99.95306
     },
     {
       "city": "Brantford",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 43.1334,
+      "lon": -80.26636
     },
     {
       "city": "Bridgewater",
       "province": "NS",
-      "lat": null,
-      "lon": null
+      "lat": 44.37856,
+      "lon": -64.51882
     },
     {
       "city": "Brockville",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.59132,
+      "lon": -75.68705
     },
     {
       "city": "Bromont",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 45.31678,
+      "lon": -72.64912
     },
     {
       "city": "Brooks",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 50.58341,
+      "lon": -111.88509
     },
     {
       "city": "Brossard",
       "province": "QC",
-      "lat": 45.4613,
-      "lon": -73.4659
+      "lat": 45.45008,
+      "lon": -73.46583
     },
     {
       "city": "Burlington",
       "province": "ON",
-      "lat": 43.3255,
-      "lon": -79.799
+      "lat": 43.38621,
+      "lon": -79.83713
     },
     {
       "city": "Burnaby",
       "province": "BC",
-      "lat": 49.2488,
-      "lon": -122.9805
+      "lat": 49.26636,
+      "lon": -122.95263
     },
     {
       "city": "Cache Creek",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 50.81011,
+      "lon": -121.3246
     },
     {
       "city": "Calgary",
@@ -215,229 +215,229 @@
       "city": "Cambridge",
       "province": "ON",
       "lat": 43.3601,
-      "lon": -80.3127
+      "lon": -80.31269
     },
     {
       "city": "Campbell River",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 50.01634,
+      "lon": -125.24459
     },
     {
       "city": "Campbellton",
       "province": "NB",
-      "lat": null,
-      "lon": null
+      "lat": 48.00751,
+      "lon": -66.67272
     },
     {
       "city": "Camrose",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 53.01684,
+      "lon": -112.83525
     },
     {
       "city": "Cap-aux-Meules",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 47.38208,
+      "lon": -61.85968
     },
     {
       "city": "Cardigan",
       "province": "PE",
-      "lat": null,
-      "lon": null
+      "lat": 46.23341,
+      "lon": -62.61535
     },
     {
       "city": "Carleton",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 48.10252,
+      "lon": -66.11962
     },
     {
       "city": "Casselman",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 45.3168,
+      "lon": -75.0826
     },
     {
       "city": "Castlegar",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.32317,
+      "lon": -117.65831
     },
     {
       "city": "Catalone",
       "province": "NS",
-      "lat": null,
-      "lon": null
+      "lat": 45.9847,
+      "lon": -59.98706
     },
     {
       "city": "Charlottetown",
       "province": "PE",
-      "lat": 46.2382,
-      "lon": -63.1311
+      "lat": 46.23459,
+      "lon": -63.1256
     },
     {
       "city": "Chatham",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 42.41224,
+      "lon": -82.18494
     },
     {
       "city": "Chemainus",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 48.91633,
+      "lon": -123.71937
     },
     {
       "city": "Chetwynd",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 55.69988,
+      "lon": -121.63627
     },
     {
       "city": "Chilliwack",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.16638,
+      "lon": -121.95257
     },
     {
       "city": "Clarenville",
       "province": "NL",
-      "lat": null,
-      "lon": null
+      "lat": 48.1666,
+      "lon": -53.96482
     },
     {
       "city": "Clarington",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 43.935,
+      "lon": -78.6083
     },
     {
       "city": "Cobourg",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 43.95977,
+      "lon": -78.16515
     },
     {
       "city": "Cochrane",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 49.06689,
+      "lon": -81.03307
     },
     {
       "city": "Cold Lake",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 54.46525,
+      "lon": -110.18154
     },
     {
       "city": "Collingwood",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.4834,
+      "lon": -80.21638
     },
     {
       "city": "Coquitlam",
       "province": "BC",
-      "lat": 49.2827,
-      "lon": -122.7934
+      "lat": 49.2846,
+      "lon": -122.78217
     },
     {
       "city": "Corner Brook",
       "province": "NL",
-      "lat": 48.9514,
-      "lon": -57.9484
+      "lat": 48.95001,
+      "lon": -57.95202
     },
     {
       "city": "Cornwall",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 45.01809,
+      "lon": -74.72815
     },
     {
       "city": "Courtenay",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.68657,
+      "lon": -124.9936
     },
     {
       "city": "Cranbrook",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.49991,
+      "lon": -115.76879
     },
     {
       "city": "Dalhousie",
       "province": "NB",
-      "lat": null,
-      "lon": null
+      "lat": 48.06442,
+      "lon": -66.37495
     },
     {
       "city": "Dauphin",
       "province": "MB",
-      "lat": null,
-      "lon": null
+      "lat": 51.14941,
+      "lon": -100.05023
     },
     {
       "city": "Dawson City",
       "province": "YT",
-      "lat": null,
-      "lon": null
+      "lat": 64.06013,
+      "lon": -139.43328
     },
     {
       "city": "Dawson Creek",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 55.75984,
+      "lon": -120.2403
     },
     {
       "city": "Deer Lake",
       "province": "NL",
-      "lat": null,
-      "lon": null
+      "lat": 49.16671,
+      "lon": -57.43163
     },
     {
       "city": "Delta",
       "province": "BC",
-      "lat": 49.0955,
-      "lon": -123.0265
+      "lat": 49.14399,
+      "lon": -122.9068
     },
     {
       "city": "Deschambeault",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 46.64802,
+      "lon": -71.9268
     },
     {
       "city": "Drayton Valley",
       "province": "AB",
-      "lat": 53.2202,
-      "lon": -114.9854
+      "lat": 53.21682,
+      "lon": -114.98544
     },
     {
       "city": "Drumheller",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 51.46171,
+      "lon": -112.71011
     },
     {
       "city": "Drummondville",
       "province": "QC",
-      "lat": 45.8833,
-      "lon": -72.4833
+      "lat": 45.88336,
+      "lon": -72.48241
     },
     {
       "city": "Dryden",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 49.78334,
+      "lon": -92.75032
     },
     {
       "city": "Duncan",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 48.78293,
+      "lon": -123.70266
     },
     {
       "city": "Edmonton",
@@ -448,122 +448,122 @@
     {
       "city": "Edmundston",
       "province": "NB",
-      "lat": 47.3743,
-      "lon": -68.3256
+      "lat": 47.3737,
+      "lon": -68.32512
     },
     {
       "city": "Edson",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 53.58345,
+      "lon": -116.43559
     },
     {
       "city": "Estevan",
       "province": "SK",
-      "lat": 49.139,
-      "lon": -102.9868
+      "lat": 49.13337,
+      "lon": -102.98422
     },
     {
       "city": "Florenceville Bristol",
       "province": "NB",
-      "lat": null,
-      "lon": null
+      "lat": 46.44353,
+      "lon": -67.61536
     },
     {
       "city": "Fort McMurray",
       "province": "AB",
-      "lat": 56.7267,
-      "lon": -111.381
+      "lat": 56.72676,
+      "lon": -111.38103
     },
     {
       "city": "Fort Nelson",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 58.80533,
+      "lon": -122.7002
     },
     {
       "city": "Fort St. John",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 56.24988,
+      "lon": -120.85292
     },
     {
       "city": "Fredericton",
       "province": "NB",
-      "lat": 45.9636,
-      "lon": -66.6431
+      "lat": 45.94541,
+      "lon": -66.66558
     },
     {
       "city": "Ft. Frances",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 48.61667,
+      "lon": -93.4003
     },
     {
       "city": "Gander",
       "province": "NL",
-      "lat": 48.9565,
-      "lon": -54.6089
+      "lat": 48.95624,
+      "lon": -54.61647
     },
     {
       "city": "Gaspe",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 48.83341,
+      "lon": -64.48194
     },
     {
       "city": "Georgetown",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 43.65011,
+      "lon": -79.91634
     },
     {
       "city": "Gimli",
       "province": "MB",
-      "lat": null,
-      "lon": null
+      "lat": 50.63362,
+      "lon": -96.99066
     },
     {
       "city": "Golden",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 51.29995,
+      "lon": -116.9689
     },
     {
       "city": "Granby",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 45.40008,
+      "lon": -72.73243
     },
     {
       "city": "Grand Falls",
       "province": "NB",
-      "lat": null,
-      "lon": null
+      "lat": 47.04609,
+      "lon": -67.74179
     },
     {
       "city": "Grande Prairie",
       "province": "AB",
-      "lat": 55.1707,
-      "lon": -118.7947
+      "lat": 55.16667,
+      "lon": -118.80271
     },
     {
       "city": "Grassland",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 54.81689,
+      "lon": -112.68529
     },
     {
       "city": "Grimsby",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 43.20011,
+      "lon": -79.56631
     },
     {
       "city": "Grimshaw",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 56.18339,
+      "lon": -117.6027
     },
     {
       "city": "Halifax",
@@ -574,62 +574,62 @@
     {
       "city": "Hamilton",
       "province": "ON",
-      "lat": 43.2557,
-      "lon": -79.8711
+      "lat": 43.25011,
+      "lon": -79.84963
     },
     {
       "city": "Hawkesbury",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 45.60009,
+      "lon": -74.61595
     },
     {
       "city": "Hearst",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 49.68351,
+      "lon": -83.66654
     },
     {
       "city": "High Level",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 58.51688,
+      "lon": -117.13605
     },
     {
       "city": "Hinton",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 53.40009,
+      "lon": -117.58567
     },
     {
       "city": "Hornepayne",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 49.21451,
+      "lon": -84.77617
     },
     {
       "city": "Huntsville",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 45.33341,
+      "lon": -79.21632
     },
     {
       "city": "Ingersoll",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 43.03339,
+      "lon": -80.88302
     },
     {
       "city": "Innisfail",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 52.02688,
+      "lon": -113.95071
     },
     {
       "city": "Inuvik",
       "province": "NT",
-      "lat": null,
-      "lon": null
+      "lat": 68.36166,
+      "lon": -133.72817
     },
     {
       "city": "Iqaluit",
@@ -640,260 +640,260 @@
     {
       "city": "Jacksons Point",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.32643,
+      "lon": -79.36687
     },
     {
       "city": "Kamloops",
       "province": "BC",
-      "lat": 50.6745,
-      "lon": -120.3273
+      "lat": 50.66648,
+      "lon": -120.3192
     },
     {
       "city": "Kapuskasing",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 49.41694,
+      "lon": -82.43308
     },
     {
       "city": "Kelowna",
       "province": "BC",
-      "lat": 49.888,
-      "lon": -119.496
+      "lat": 49.88307,
+      "lon": -119.48568
     },
     {
       "city": "Kemptville",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 45.0168,
+      "lon": -75.64104
     },
     {
       "city": "Kenora",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 49.76741,
+      "lon": -94.48985
     },
     {
       "city": "Kincardine",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.18339,
+      "lon": -81.63307
     },
     {
       "city": "Kindersley",
       "province": "SK",
-      "lat": null,
-      "lon": null
+      "lat": 51.46681,
+      "lon": -109.16818
     },
     {
       "city": "Kingston",
       "province": "ON",
-      "lat": 44.2312,
-      "lon": -76.486
+      "lat": 44.22976,
+      "lon": -76.48098
     },
     {
       "city": "Kirkland Lake",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 48.14461,
+      "lon": -80.03767
     },
     {
       "city": "Kitchener",
       "province": "ON",
-      "lat": 43.4516,
-      "lon": -80.4925
+      "lat": 43.42537,
+      "lon": -80.5112
     },
     {
       "city": "Kitimat",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 54.05244,
+      "lon": -128.65342
     },
     {
       "city": "La Malbaie",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 47.654,
+      "lon": -70.15268
     },
     {
       "city": "La Pocatiere",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 47.36733,
+      "lon": -70.03484
     },
     {
       "city": "Lac La Biche",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 54.7669,
+      "lon": -111.96861
     },
     {
       "city": "Lacombe",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 52.46681,
+      "lon": -113.7353
     },
     {
       "city": "Ladysmith",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 48.99016,
+      "lon": -123.81699
     },
     {
       "city": "Lamont",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 53.76686,
+      "lon": -112.80195
     },
     {
       "city": "Langley",
       "province": "BC",
-      "lat": 49.1044,
-      "lon": -122.5827
+      "lat": 49.10107,
+      "lon": -122.65883
     },
     {
       "city": "Leamington",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 42.05009,
+      "lon": -82.59981
     },
     {
       "city": "Lethbridge",
       "province": "AB",
-      "lat": 49.6956,
-      "lon": -112.8451
+      "lat": 49.69999,
+      "lon": -112.81856
     },
     {
       "city": "Levis",
       "province": "QC",
-      "lat": 46.8033,
-      "lon": -71.1779
+      "lat": 46.80326,
+      "lon": -71.17793
     },
     {
       "city": "Liverpool",
       "province": "NS",
-      "lat": null,
-      "lon": null
+      "lat": 44.03639,
+      "lon": -64.72044
     },
     {
       "city": "Lloydminster",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 53.27237,
+      "lon": -110.02256
     },
     {
       "city": "London",
       "province": "ON",
-      "lat": 42.9849,
-      "lon": -81.2453
+      "lat": 42.98339,
+      "lon": -81.23304
     },
     {
       "city": "Manning",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 56.92166,
+      "lon": -117.63117
     },
     {
       "city": "Maple Ridge",
       "province": "BC",
-      "lat": 49.2193,
-      "lon": -122.6019
+      "lat": 49.21939,
+      "lon": -122.60193
     },
     {
       "city": "Markham",
       "province": "ON",
-      "lat": 43.8561,
-      "lon": -79.337
+      "lat": 43.86682,
+      "lon": -79.2663
     },
     {
       "city": "Matane",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 48.82857,
+      "lon": -67.52197
     },
     {
       "city": "McBride",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 53.29995,
+      "lon": -120.16932
     },
     {
       "city": "Meadow Lake",
       "province": "SK",
-      "lat": null,
-      "lon": null
+      "lat": 54.13348,
+      "lon": -108.43471
     },
     {
       "city": "Medicine Hat",
       "province": "AB",
-      "lat": 50.041,
-      "lon": -110.6775
+      "lat": 50.03928,
+      "lon": -110.67661
     },
     {
       "city": "Merritt",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 50.11225,
+      "lon": -120.7942
     },
     {
       "city": "Middleton",
       "province": "NS",
-      "lat": null,
-      "lon": null
+      "lat": 44.94284,
+      "lon": -65.07022
     },
     {
       "city": "Midland",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.7501,
+      "lon": -79.88296
     },
     {
       "city": "Milton",
       "province": "ON",
-      "lat": 43.5183,
-      "lon": -79.8774
+      "lat": 43.51681,
+      "lon": -79.88294
     },
     {
       "city": "Mindemoya",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 45.73337,
+      "lon": -82.16652
     },
     {
       "city": "Miramichi",
       "province": "NB",
-      "lat": 47.03,
-      "lon": -65.5067
+      "lat": 47.02895,
+      "lon": -65.50186
     },
     {
       "city": "Mississauga",
       "province": "ON",
-      "lat": 43.589,
-      "lon": -79.6441
+      "lat": 43.5789,
+      "lon": -79.6583
     },
     {
       "city": "Moncton",
       "province": "NB",
-      "lat": 46.0878,
-      "lon": -64.7782
+      "lat": 46.09454,
+      "lon": -64.7965
     },
     {
       "city": "Mont Laurier",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 46.55011,
+      "lon": -75.4993
     },
     {
       "city": "Mont-Joli",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 48.58388,
+      "lon": -68.19214
     },
     {
       "city": "Mont-Tremblant",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 46.21274,
+      "lon": -74.58438
     },
     {
       "city": "Montreal",
@@ -904,116 +904,116 @@
     {
       "city": "Moose Jaw",
       "province": "SK",
-      "lat": 50.3933,
-      "lon": -105.551
+      "lat": 50.40005,
+      "lon": -105.53445
     },
     {
       "city": "Moosomin",
       "province": "SK",
-      "lat": null,
-      "lon": null
+      "lat": 50.14261,
+      "lon": -101.66666
     },
     {
       "city": "Morden",
       "province": "MB",
-      "lat": null,
-      "lon": null
+      "lat": 49.1919,
+      "lon": -98.10136
     },
     {
       "city": "Nanaimo",
       "province": "BC",
-      "lat": 49.1659,
-      "lon": -123.9401
+      "lat": 49.16638,
+      "lon": -123.94003
     },
     {
       "city": "Napanee",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.25012,
+      "lon": -76.94944
     },
     {
       "city": "Nelson",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.49985,
+      "lon": -117.28553
     },
     {
       "city": "New Carlisle",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 48.00956,
+      "lon": -65.33621
     },
     {
       "city": "New Glasgow",
       "province": "NS",
-      "lat": 45.589,
-      "lon": -62.6453
+      "lat": 45.58344,
+      "lon": -62.64863
     },
     {
       "city": "New Minas",
       "province": "NS",
-      "lat": null,
-      "lon": null
+      "lat": 45.0691,
+      "lon": -64.46958
     },
     {
       "city": "Newmarket",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.05011,
+      "lon": -79.46631
     },
     {
       "city": "North Battleford",
       "province": "SK",
-      "lat": null,
-      "lon": null
+      "lat": 52.77972,
+      "lon": -108.2967
     },
     {
       "city": "North Bay",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 46.3168,
+      "lon": -79.46633
     },
     {
       "city": "North Vancouver",
       "province": "BC",
-      "lat": 49.32,
-      "lon": -123.0726
+      "lat": 49.31636,
+      "lon": -123.06934
     },
     {
       "city": "Oakville",
       "province": "ON",
-      "lat": 43.4675,
-      "lon": -79.6877
+      "lat": 43.45011,
+      "lon": -79.68292
     },
     {
       "city": "Olds",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 51.78341,
+      "lon": -114.10199
     },
     {
       "city": "Oliver",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.18306,
+      "lon": -119.5524
     },
     {
       "city": "Orangeville",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 43.9168,
+      "lon": -80.09967
     },
     {
       "city": "Orillia",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.60868,
+      "lon": -79.42068
     },
     {
       "city": "Osoyoos",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.03306,
+      "lon": -119.45237
     },
     {
       "city": "Ottawa",
@@ -1024,398 +1024,398 @@
     {
       "city": "Owen Sound",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.56717,
+      "lon": -80.94349
     },
     {
       "city": "Parksville",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.31947,
+      "lon": -124.31575
     },
     {
       "city": "Parry Sound",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 45.34732,
+      "lon": -80.03527
     },
     {
       "city": "Peace River",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 56.23715,
+      "lon": -117.29176
     },
     {
       "city": "Pembroke",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 45.81681,
+      "lon": -77.11616
     },
     {
       "city": "Penticton",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.48062,
+      "lon": -119.58584
     },
     {
       "city": "Petawawa",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 45.89452,
+      "lon": -77.28007
     },
     {
       "city": "Peterborough",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.30012,
+      "lon": -78.31623
     },
     {
       "city": "Pickering",
       "province": "ON",
-      "lat": 43.8384,
-      "lon": -79.0868
+      "lat": 43.90012,
+      "lon": -79.13289
     },
     {
       "city": "Pictou",
       "province": "NS",
-      "lat": null,
-      "lon": null
+      "lat": 45.67875,
+      "lon": -62.70936
     },
     {
       "city": "Pikogan",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 48.59886,
+      "lon": -78.11648
     },
     {
       "city": "Pincher Creek",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 49.48328,
+      "lon": -113.95195
     },
     {
       "city": "Port Alberni",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.24133,
+      "lon": -124.8028
     },
     {
       "city": "Port Elgin",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.43605,
+      "lon": -81.38981
     },
     {
       "city": "Port Hardy",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 50.72086,
+      "lon": -127.49231
     },
     {
       "city": "Port Hope",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.01682,
+      "lon": -78.39953
     },
     {
       "city": "Port Mcneill",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 50.59,
+      "lon": -127.08638
     },
     {
       "city": "Portage La Prairie",
       "province": "MB",
-      "lat": null,
-      "lon": null
+      "lat": 49.97282,
+      "lon": -98.29263
     },
     {
       "city": "Prince Albert",
       "province": "SK",
-      "lat": 53.2001,
-      "lon": -105.7506
+      "lat": 53.20008,
+      "lon": -105.76772
     },
     {
       "city": "Prince George",
       "province": "BC",
-      "lat": 53.9171,
-      "lon": -122.7497
+      "lat": 53.9166,
+      "lon": -122.75301
     },
     {
       "city": "Prince Rupert",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 54.31507,
+      "lon": -130.32098
     },
     {
       "city": "Princeton",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.45802,
+      "lon": -120.51076
     },
     {
       "city": "Quebec",
       "province": "QC",
-      "lat": 46.8139,
-      "lon": -71.208
+      "lat": 46.81228,
+      "lon": -71.21454
     },
     {
       "city": "Quesnel",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 52.97842,
+      "lon": -122.4931
     },
     {
       "city": "Radium Hot Springs",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 50.61667,
+      "lon": -116.06878
     },
     {
       "city": "Red Deer",
       "province": "AB",
-      "lat": 52.2681,
-      "lon": -113.8112
+      "lat": 52.26682,
+      "lon": -113.802
     },
     {
       "city": "Regina",
       "province": "SK",
-      "lat": 50.4452,
-      "lon": -104.6189
+      "lat": 50.45008,
+      "lon": -104.6178
     },
     {
       "city": "Repentigny",
       "province": "QC",
-      "lat": 45.742,
-      "lon": -73.4501
+      "lat": 45.74222,
+      "lon": -73.45008
     },
     {
       "city": "Revelstoke",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 50.99712,
+      "lon": -118.1953
     },
     {
       "city": "Richmond Hill",
       "province": "ON",
-      "lat": 43.8828,
-      "lon": -79.4403
+      "lat": 43.87111,
+      "lon": -79.43725
     },
     {
       "city": "Rimbey",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 52.6334,
+      "lon": -114.23532
     },
     {
       "city": "Rimouski",
       "province": "QC",
-      "lat": 48.4508,
-      "lon": -68.523
+      "lat": 48.44879,
+      "lon": -68.52396
     },
     {
       "city": "Riviere-du-Loup",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 47.82699,
+      "lon": -69.54243
     },
     {
       "city": "Roberval",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 48.5168,
+      "lon": -72.23244
     },
     {
       "city": "Rocky Mountain House",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 52.36683,
+      "lon": -114.9188
     },
     {
       "city": "Rossland",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.08313,
+      "lon": -117.80224
     },
     {
       "city": "Rouyn-Noranda",
       "province": "QC",
-      "lat": 48.2369,
-      "lon": -79.023
+      "lat": 48.23656,
+      "lon": -79.02311
     },
     {
       "city": "Russell",
       "province": "MB",
-      "lat": null,
-      "lon": null
+      "lat": 50.78079,
+      "lon": -101.28481
     },
     {
       "city": "Saguenay",
       "province": "QC",
-      "lat": 48.4281,
-      "lon": -71.0685
+      "lat": 48.41675,
+      "lon": -71.06573
     },
     {
       "city": "Saint John",
       "province": "NB",
-      "lat": 45.2733,
-      "lon": -66.0633
+      "lat": 45.27076,
+      "lon": -66.05616
     },
     {
       "city": "Saint-Agathe-des-Monts",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 46.05009,
+      "lon": -74.28252
     },
     {
       "city": "Saint-Georges",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 46.11353,
+      "lon": -70.66526
     },
     {
       "city": "Saint-Hyacinthe",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 45.63076,
+      "lon": -72.95699
     },
     {
       "city": "Saint-Jean-sur-Richelieu",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 45.30713,
+      "lon": -73.26259
     },
     {
       "city": "Saint-Jerome",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 45.78036,
+      "lon": -74.00365
     },
     {
       "city": "Saint-Laurent",
       "province": "QC",
-      "lat": 45.5,
-      "lon": -73.6658
+      "lat": 45.50008,
+      "lon": -73.66585
     },
     {
       "city": "Sainte-Anne-de-Beaupré",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 47.02389,
+      "lon": -70.92833
     },
     {
       "city": "Salmon Arm",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 50.6998,
+      "lon": -119.30237
     },
     {
       "city": "Sarnia",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 42.97866,
+      "lon": -82.40407
     },
     {
       "city": "Saskatoon",
       "province": "SK",
-      "lat": 52.1332,
-      "lon": -106.67
+      "lat": 52.13238,
+      "lon": -106.66892
     },
     {
       "city": "Sault Ste. Marie",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 46.51677,
+      "lon": -84.33325
     },
     {
       "city": "Seguin",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 45.3001,
+      "lon": -79.78295
     },
     {
       "city": "Selkirk",
       "province": "MB",
-      "lat": null,
-      "lon": null
+      "lat": 50.1436,
+      "lon": -96.88452
     },
     {
       "city": "Sept-Iles",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 50.20011,
+      "lon": -66.38208
     },
     {
       "city": "Shawinigan",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 46.56675,
+      "lon": -72.74913
     },
     {
       "city": "Sherbrooke",
       "province": "QC",
-      "lat": 45.4042,
-      "lon": -71.8929
+      "lat": 45.40008,
+      "lon": -71.89908
     },
     {
       "city": "Sicamous",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 50.83312,
+      "lon": -118.98565
     },
     {
       "city": "Simcoe",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 42.8334,
+      "lon": -80.29967
     },
     {
       "city": "Slave Lake",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 55.28344,
+      "lon": -114.76896
     },
     {
       "city": "Smithers",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 54.78036,
+      "lon": -127.17428
     },
     {
       "city": "Smiths Falls",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.90452,
+      "lon": -76.02333
     },
     {
       "city": "Sooke",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 48.37463,
+      "lon": -123.72762
     },
     {
       "city": "Squamish",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.69925,
+      "lon": -123.15631
     },
     {
       "city": "St. Andrews",
       "province": "NB",
-      "lat": null,
-      "lon": null
+      "lat": 45.0737,
+      "lon": -67.05312
     },
     {
       "city": "St. Anthony",
       "province": "NL",
-      "lat": null,
-      "lon": null
+      "lat": 51.37039,
+      "lon": -55.59743
     },
     {
       "city": "St. Catharines",
       "province": "ON",
-      "lat": 43.1594,
-      "lon": -79.2469
+      "lat": 43.17126,
+      "lon": -79.24267
     },
     {
       "city": "St. John's",
@@ -1426,158 +1426,158 @@
     {
       "city": "St. Stephen",
       "province": "NB",
-      "lat": null,
-      "lon": null
+      "lat": 45.18044,
+      "lon": -67.29529
     },
     {
       "city": "St. Thomas",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 42.77361,
+      "lon": -81.18038
     },
     {
       "city": "Steinbach",
       "province": "MB",
-      "lat": null,
-      "lon": null
+      "lat": 49.52579,
+      "lon": -96.68451
     },
     {
       "city": "Stellarton",
       "province": "NS",
-      "lat": null,
-      "lon": null
+      "lat": 45.55854,
+      "lon": -62.66069
     },
     {
       "city": "Stephenville",
       "province": "NL",
-      "lat": null,
-      "lon": null
+      "lat": 48.55001,
+      "lon": -58.5818
     },
     {
       "city": "Stettler",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 52.31683,
+      "lon": -112.71861
     },
     {
       "city": "Stratford",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 43.36679,
+      "lon": -80.94972
     },
     {
       "city": "Strathroy",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 42.9551,
+      "lon": -81.62232
     },
     {
       "city": "Sturgeon Falls",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 46.36679,
+      "lon": -79.91636
     },
     {
       "city": "Sudbury",
       "province": "ON",
-      "lat": 46.4917,
-      "lon": -80.993
+      "lat": 46.49,
+      "lon": -80.99001
     },
     {
       "city": "Summerside",
       "province": "PE",
-      "lat": 46.3934,
-      "lon": -63.7902
+      "lat": 46.3912,
+      "lon": -63.78869
     },
     {
       "city": "Surrey",
       "province": "BC",
-      "lat": 49.1913,
-      "lon": -122.849
+      "lat": 49.10635,
+      "lon": -122.82509
     },
     {
       "city": "Sussex",
       "province": "NB",
-      "lat": null,
-      "lon": null
+      "lat": 45.72266,
+      "lon": -65.50663
     },
     {
       "city": "Swift Current",
       "province": "SK",
-      "lat": null,
-      "lon": null
+      "lat": 50.28337,
+      "lon": -107.80135
     },
     {
       "city": "Sydney",
       "province": "NS",
-      "lat": 46.1368,
-      "lon": -60.1942
+      "lat": 46.1351,
+      "lon": -60.1831
     },
     {
       "city": "Taber",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 49.78703,
+      "lon": -112.14603
     },
     {
       "city": "Temiskaming Shores",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 47.49376,
+      "lon": -79.71529
     },
     {
       "city": "Terrace",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 54.51634,
+      "lon": -128.60345
     },
     {
       "city": "Terrebonne",
       "province": "QC",
-      "lat": 45.7,
-      "lon": -73.6333
+      "lat": 45.70004,
+      "lon": -73.64732
     },
     {
       "city": "Thetford Mines",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 46.09371,
+      "lon": -71.30539
     },
     {
       "city": "Thompson",
       "province": "MB",
       "lat": 55.7435,
-      "lon": -97.8558
+      "lon": -97.85579
     },
     {
       "city": "Thornhill",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 54.51261,
+      "lon": -128.54073
     },
     {
       "city": "Three Hills",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 51.70012,
+      "lon": -113.26863
     },
     {
       "city": "Thunder Bay",
       "province": "ON",
-      "lat": 48.3809,
-      "lon": -89.2477
+      "lat": 48.38202,
+      "lon": -89.25018
     },
     {
       "city": "Timmins",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 48.46686,
+      "lon": -81.33312
     },
     {
       "city": "Tofino",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.15314,
+      "lon": -125.90744
     },
     {
       "city": "Toronto",
@@ -1588,38 +1588,38 @@
     {
       "city": "Trail",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 49.09983,
+      "lon": -117.70223
     },
     {
       "city": "Trois-Rivieres",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 46.34515,
+      "lon": -72.5477
     },
     {
       "city": "Trois-Rivières",
       "province": "QC",
-      "lat": 46.3498,
-      "lon": -72.549
+      "lat": 46.34515,
+      "lon": -72.5477
     },
     {
       "city": "Truro",
       "province": "NS",
-      "lat": 45.3643,
-      "lon": -63.2818
+      "lat": 45.36685,
+      "lon": -63.26538
     },
     {
       "city": "Val-d'Or",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 48.0974,
+      "lon": -77.79737
     },
     {
       "city": "Valemount",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 52.83329,
+      "lon": -119.2525
     },
     {
       "city": "Vancouver",
@@ -1631,103 +1631,103 @@
       "city": "Vaughan",
       "province": "ON",
       "lat": 43.8361,
-      "lon": -79.4983
+      "lon": -79.49827
     },
     {
       "city": "Vermilion",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 53.35409,
+      "lon": -110.85849
     },
     {
       "city": "Vernon",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 50.26729,
+      "lon": -119.27337
     },
     {
       "city": "Victoria",
       "province": "BC",
-      "lat": 48.4284,
-      "lon": -123.3656
+      "lat": 48.4359,
+      "lon": -123.35155
     },
     {
       "city": "Victoriaville",
       "province": "QC",
-      "lat": null,
-      "lon": null
+      "lat": 46.05007,
+      "lon": -71.96579
     },
     {
       "city": "Wainwright",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 52.83482,
+      "lon": -110.85342
     },
     {
       "city": "Walkerton",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 44.13023,
+      "lon": -81.15309
     },
     {
       "city": "Waterloo",
       "province": "ON",
-      "lat": 43.4643,
-      "lon": -80.5204
+      "lat": 43.4668,
+      "lon": -80.51639
     },
     {
       "city": "Waterloo",
       "province": "QC",
-      "lat": 45.35,
-      "lon": -72.5167
+      "lat": 45.35008,
+      "lon": -72.51582
     },
     {
       "city": "Watrous",
       "province": "SK",
-      "lat": null,
-      "lon": null
+      "lat": 51.66677,
+      "lon": -105.46788
     },
     {
       "city": "Westlock",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 54.15016,
+      "lon": -113.86876
     },
     {
       "city": "Wetaskiwin",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 52.96683,
+      "lon": -113.36869
     },
     {
       "city": "Weyburn",
       "province": "SK",
-      "lat": null,
-      "lon": null
+      "lat": 49.66675,
+      "lon": -103.85109
     },
     {
       "city": "Whitby",
       "province": "ON",
-      "lat": 43.8976,
-      "lon": -78.9429
+      "lat": 43.88342,
+      "lon": -78.93287
     },
     {
       "city": "White Point",
       "province": "NS",
-      "lat": null,
-      "lon": null
+      "lat": 43.96386,
+      "lon": -64.74996
     },
     {
       "city": "Whitecap",
       "province": "SK",
-      "lat": null,
-      "lon": null
+      "lat": 51.86678,
+      "lon": -106.70124
     },
     {
       "city": "Whitecourt",
       "province": "AB",
-      "lat": null,
-      "lon": null
+      "lat": 54.15015,
+      "lon": -115.68548
     },
     {
       "city": "Whitehorse",
@@ -1738,26 +1738,26 @@
     {
       "city": "Williams Lake",
       "province": "BC",
-      "lat": null,
-      "lon": null
+      "lat": 52.14153,
+      "lon": -122.14451
     },
     {
       "city": "Windsor",
       "province": "NS",
-      "lat": null,
-      "lon": null
+      "lat": 44.98345,
+      "lon": -64.13204
     },
     {
       "city": "Windsor",
       "province": "ON",
-      "lat": 42.3149,
-      "lon": -83.0364
+      "lat": 42.30008,
+      "lon": -83.01654
     },
     {
       "city": "Winkler",
       "province": "MB",
-      "lat": null,
-      "lon": null
+      "lat": 49.1817,
+      "lon": -97.94104
     },
     {
       "city": "Winnipeg",
@@ -1768,26 +1768,26 @@
     {
       "city": "Wolfville",
       "province": "NS",
-      "lat": null,
-      "lon": null
+      "lat": 45.08345,
+      "lon": -64.36546
     },
     {
       "city": "Woodstock",
       "province": "NB",
-      "lat": null,
-      "lon": null
+      "lat": 46.15796,
+      "lon": -67.58377
     },
     {
       "city": "Woodstock",
       "province": "ON",
-      "lat": null,
-      "lon": null
+      "lat": 43.13339,
+      "lon": -80.7497
     },
     {
       "city": "Yarmouth",
       "province": "NS",
-      "lat": null,
-      "lon": null
+      "lat": 43.83345,
+      "lon": -66.11557
     },
     {
       "city": "Yellowknife",
@@ -1798,8 +1798,8 @@
     {
       "city": "Yorkton",
       "province": "SK",
-      "lat": null,
-      "lon": null
+      "lat": 51.2167,
+      "lon": -102.46766
     }
   ]
 }
