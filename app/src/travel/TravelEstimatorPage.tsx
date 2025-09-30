@@ -1,6 +1,7 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
 import { useAuth } from 'wasp/client/auth';
+import { createTravelEstimate, getTravelEstimates, useAction, useQuery } from 'wasp/client/operations';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 import { cn } from '../lib/utils';
@@ -29,6 +30,7 @@ import {
   mealAllowanceDatasetAvailable,
   cityRateDatasetAvailable,
 } from './ratesData';
+import type { TravelEstimate } from 'wasp/entities';
 
 const DEFAULT_HOTEL_BASE_RATE = Math.round(defaultHotelRate);
 const DEFAULT_HOTEL_NIGHTLY_RATE = DEFAULT_HOTEL_BASE_RATE.toString();
@@ -39,6 +41,7 @@ const DEFAULT_REGION_CODE =
 const DEFAULT_RENTAL_DAILY_RATE = carRentalReference.averageDailyRate
   ? carRentalReference.averageDailyRate.toFixed(2)
   : '85';
+const RECENT_ESTIMATES_LIMIT = 5;
 
 const ONBOARDING_STEP_INFO = [
   {
@@ -173,7 +176,13 @@ interface EstimateResults {
   kilometricRateAbbreviation?: string;
   mealBreakdown: MealAllowanceSummary;
   mealEffectiveDate?: string | null;
+  origin: string;
+  destination: string;
+  startDate: string;
+  returnDate: string;
 }
+
+type SummaryRow = { label: string; value: string };
 
 type CityWithCoordinates = CitySuggestion & { lat: number; lon: number };
 
@@ -239,6 +248,15 @@ const formatIsoDate = (value?: string | null) => {
 
 export default function TravelEstimatorPage() {
   const { data: user } = useAuth();
+  const createEstimateAction = useAction(createTravelEstimate);
+  const travelEstimatesQuery = useQuery(getTravelEstimates, undefined, {
+    enabled: Boolean(user),
+  });
+  const travelEstimates = (travelEstimatesQuery.data as TravelEstimate[] | undefined) ?? [];
+  const recentEstimates = travelEstimates.slice(0, RECENT_ESTIMATES_LIMIT);
+  const isHistoryLoading = travelEstimatesQuery.status === 'loading' || travelEstimatesQuery.status === 'idle';
+  const historyError = travelEstimatesQuery.status === 'error' ? travelEstimatesQuery.error : null;
+  const refetchTravelEstimates = travelEstimatesQuery.refetch;
   const [estimate, setEstimate] = useState(() => ({ ...INITIAL_ESTIMATE }));
 
   const [results, setResults] = useState<EstimateResults | null>(null);
@@ -458,7 +476,7 @@ export default function TravelEstimatorPage() {
     const hotel = lodgingExtras.hotelTotal;
     const extrasTotal = lodgingExtras.extrasTotal;
 
-    setResults({
+    const nextResults: EstimateResults = {
       transportation,
       meals,
       hotel,
@@ -491,7 +509,51 @@ export default function TravelEstimatorPage() {
       kilometricRateAbbreviation: regionRate.abbreviation,
       mealBreakdown,
       mealEffectiveDate: mealAllowanceRates.effectiveDate ?? null,
-    });
+      origin: estimate.origin,
+      destination: estimate.destination,
+      startDate: estimate.startDate,
+      returnDate: estimate.returnDate,
+    };
+
+    setResults(nextResults);
+
+    if (user) {
+      const summaryForSave = buildSummaryRows(nextResults);
+      const payload = {
+        origin: nextResults.origin,
+        destination: nextResults.destination,
+        startDate: nextResults.startDate,
+        returnDate: nextResults.returnDate,
+        travelMode: nextResults.travelMode,
+        distance: Number.isFinite(nextResults.distance) ? nextResults.distance : null,
+        days: Number.isFinite(nextResults.days) ? nextResults.days : null,
+        includeHotel: nextResults.includeHotel,
+        includeIncidentals: nextResults.includeIncidentals,
+        includeOneTimeExtras: nextResults.includeOneTimeExtras,
+        totals: {
+          transportation,
+          meals,
+          hotel,
+          extrasPerDiem: nextResults.extrasPerDiem,
+          extrasOneTime: nextResults.extrasOneTime,
+          total: nextResults.total,
+        },
+        summaryRows: summaryForSave,
+        metadata: {
+          transportationDetail,
+          mealBreakdown,
+          mealEffectiveDate: nextResults.mealEffectiveDate,
+          kilometricRateLabel: nextResults.kilometricRateLabel,
+          kilometricRateAbbreviation: nextResults.kilometricRateAbbreviation,
+        },
+      };
+
+      createEstimateAction(payload).then(() => {
+        refetchTravelEstimates?.();
+      }).catch((error) => {
+        console.error('Failed to save travel estimate history', error);
+      });
+    }
   };
 
   const needsSubscription = user
@@ -505,37 +567,50 @@ export default function TravelEstimatorPage() {
     return new Intl.DateTimeFormat('en-CA', { dateStyle: 'medium' }).format(date);
   };
 
-  const summaryRows = useMemo(() => {
-    if (!results) return [] as Array<{ label: string; value: string }>;
-    const rows: Array<{ label: string; value: string }> = [
-      { label: 'Origin city', value: estimate.origin || '—' },
-      { label: 'Destination city', value: estimate.destination || '—' },
+  const formatTimestamp = (iso?: string | null) => {
+    if (!iso) return '—';
+    const date = new Date(iso);
+    if (Number.isNaN(date.getTime())) return '—';
+    return new Intl.DateTimeFormat('en-CA', { dateStyle: 'medium', timeStyle: 'short' }).format(date);
+  };
+
+  const buildSummaryRows = (resultsForRow: EstimateResults): SummaryRow[] => {
+    const rows: SummaryRow[] = [
+      { label: 'Origin city', value: resultsForRow.origin || '—' },
+      { label: 'Destination city', value: resultsForRow.destination || '—' },
       {
         label: 'Travel dates',
-        value: `${formatDisplayDate(estimate.startDate)} → ${formatDisplayDate(estimate.returnDate)}`,
+        value: `${formatDisplayDate(resultsForRow.startDate)} → ${formatDisplayDate(resultsForRow.returnDate)}`,
       },
-      { label: 'Travel days', value: results.days.toString() },
-      { label: 'Transportation mode', value: results.travelMode === 'rental' ? 'Rental car' : 'Personal vehicle' },
-      { label: 'Transportation detail', value: results.transportationDetail },
-      { label: 'Transportation cost', value: formatCurrency(results.transportation) },
+      { label: 'Travel days', value: resultsForRow.days.toString() },
+      {
+        label: 'Transportation mode',
+        value: resultsForRow.travelMode === 'rental' ? 'Rental car' : 'Personal vehicle',
+      },
+      { label: 'Transportation detail', value: resultsForRow.transportationDetail },
+      { label: 'Transportation cost', value: formatCurrency(resultsForRow.transportation) },
     ];
 
-    if (results.travelMode === 'personal') {
+    if (resultsForRow.travelMode === 'personal') {
       const effective = kilometricEffectiveLabel ?? kilometricRatesEffectiveDate ?? null;
       const labelParts = [
-        `${results.kilometricRateLabel} — ${formatCurrency(results.kilometricRateCents / 100)}/km`,
+        `${resultsForRow.kilometricRateLabel} — ${formatCurrency(resultsForRow.kilometricRateCents / 100)}/km`,
         effective ? `effective ${effective}` : null,
       ].filter(Boolean);
       rows.push({ label: 'Kilometric rate', value: labelParts.join(' · ') });
     }
 
-    const mealBreakdownText = results.mealBreakdown.segments
+    const mealBreakdownText = resultsForRow.mealBreakdown.segments
       .map((segment) => `${segment.days} × ${formatCurrency(segment.rate)}`)
       .join(' + ');
-    const mealEffective = results.mealEffectiveDate
-      ? formatIsoDate(results.mealEffectiveDate) ?? results.mealEffectiveDate
+    const mealEffective = resultsForRow.mealEffectiveDate
+      ? formatIsoDate(resultsForRow.mealEffectiveDate) ?? resultsForRow.mealEffectiveDate
       : mealEffectiveLabel;
-    const mealValueParts = [formatCurrency(results.meals), mealBreakdownText || null, mealEffective ? `effective ${mealEffective}` : null]
+    const mealValueParts = [
+      formatCurrency(resultsForRow.meals),
+      mealBreakdownText || null,
+      mealEffective ? `effective ${mealEffective}` : null,
+    ]
       .filter(Boolean)
       .join(' · ');
     rows.push({ label: 'Meals per diem', value: mealValueParts });
@@ -545,51 +620,54 @@ export default function TravelEstimatorPage() {
       value: exchangeRatesSummaryText ?? 'Dataset unavailable',
     });
 
-    if (results.includeHotel && results.hotel > 0) {
-      rows.push({ label: 'Hotel nights', value: results.hotelNights.toString() });
-      rows.push({ label: 'Nightly rate', value: formatCurrency(results.hotelNightlyRate) });
-      if (results.hotelTaxes > 0) {
+    if (resultsForRow.includeHotel && resultsForRow.hotel > 0) {
+      rows.push({ label: 'Hotel nights', value: resultsForRow.hotelNights.toString() });
+      rows.push({ label: 'Nightly rate', value: formatCurrency(resultsForRow.hotelNightlyRate) });
+      if (resultsForRow.hotelTaxes > 0) {
         rows.push({
           label: 'Hotel taxes & fees',
-          value: `${formatCurrency(results.hotelTaxes)} (${results.hotelTaxPercent.toFixed(1)}%)`,
+          value: `${formatCurrency(resultsForRow.hotelTaxes)} (${resultsForRow.hotelTaxPercent.toFixed(1)}%)`,
         });
       }
-      rows.push({ label: 'Hotel total', value: formatCurrency(results.hotel) });
+      rows.push({ label: 'Hotel total', value: formatCurrency(resultsForRow.hotel) });
     }
 
-    if (results.extrasPerDiem > 0) {
-      const incidentalDaysLabel = `${results.incidentalsDays} day${results.incidentalsDays === 1 ? '' : 's'}`;
+    if (resultsForRow.extrasPerDiem > 0) {
+      const incidentalDaysLabel = `${resultsForRow.incidentalsDays} day${resultsForRow.incidentalsDays === 1 ? '' : 's'}`;
       rows.push({
         label: 'Per-diem extras',
-        value: `${formatCurrency(results.extrasPerDiem)} (${incidentalDaysLabel} × ${formatCurrency(results.incidentalsDailyRate)})`,
+        value: `${formatCurrency(resultsForRow.extrasPerDiem)} (${incidentalDaysLabel} × ${formatCurrency(
+          resultsForRow.incidentalsDailyRate,
+        )})`,
       });
     }
 
-    if (results.extrasOneTime > 0) {
+    if (resultsForRow.extrasOneTime > 0) {
       rows.push({
-        label: results.oneTimeExtrasDescription || 'One-time extras',
-        value: formatCurrency(results.extrasOneTime),
+        label: resultsForRow.oneTimeExtrasDescription || 'One-time extras',
+        value: formatCurrency(resultsForRow.extrasOneTime),
       });
     }
 
-    if (results.extrasTotal > 0) {
-      rows.push({ label: 'Extras total', value: formatCurrency(results.extrasTotal) });
+    if (resultsForRow.extrasTotal > 0) {
+      rows.push({ label: 'Extras total', value: formatCurrency(resultsForRow.extrasTotal) });
     }
 
-    if (results.travelMode === 'rental') {
-      rows.push({ label: 'Rental daily rate', value: formatCurrency(results.rentalDailyRate) });
-      rows.push({ label: 'Rental days', value: results.rentalDays.toString() });
+    if (resultsForRow.travelMode === 'rental') {
+      rows.push({ label: 'Rental daily rate', value: formatCurrency(resultsForRow.rentalDailyRate) });
+      rows.push({ label: 'Rental days', value: resultsForRow.rentalDays.toString() });
     }
 
-    rows.push({ label: 'Total estimate', value: formatCurrency(results.total) });
+    rows.push({ label: 'Total estimate', value: formatCurrency(resultsForRow.total) });
     return rows;
-  }, [
-    estimate.destination,
-    estimate.origin,
-    estimate.returnDate,
-    estimate.startDate,
-    exchangeRatesSummaryText,
+  };
+
+  const summaryRows = useMemo(() => (results ? buildSummaryRows(results) : []), [
     results,
+    exchangeRatesSummaryText,
+    kilometricEffectiveLabel,
+    kilometricRatesEffectiveDate,
+    mealEffectiveLabel,
   ]);
 
   const downloadCsv = () => {
@@ -1578,6 +1656,51 @@ export default function TravelEstimatorPage() {
               </CardContent>
             </Card>
           )}
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Recent estimates</CardTitle>
+              <CardDescription>Saved automatically when you recalculate totals.</CardDescription>
+            </CardHeader>
+            <CardContent className='space-y-4'>
+              {!user ? (
+                <p className='text-sm text-muted-foreground'>Sign in to keep a history of your estimates.</p>
+              ) : isHistoryLoading ? (
+                <div className='space-y-3'>
+                  {[...Array(3)].map((_, idx) => (
+                    <div key={idx} className='h-12 rounded-lg bg-muted animate-pulse' />
+                  ))}
+                </div>
+              ) : historyError ? (
+                <p className='text-sm text-destructive'>Unable to load estimate history.</p>
+              ) : recentEstimates.length === 0 ? (
+                <p className='text-sm text-muted-foreground'>Run your first estimate and it will appear here.</p>
+              ) : (
+                <ul className='space-y-4'>
+                  {recentEstimates.map((entry) => (
+                    <li
+                      key={entry.id}
+                      className='flex items-start justify-between gap-3 rounded-lg border border-border/60 bg-background/80 p-3 shadow-sm'
+                    >
+                      <div className='flex-1'>
+                        <p className='text-sm font-medium text-foreground'>
+                          {(entry.origin || '—')}
+                          {entry.destination ? ` → ${entry.destination}` : ''}
+                        </p>
+                        <p className='text-xs text-muted-foreground'>Generated {formatTimestamp(entry.createdAt)}</p>
+                      </div>
+                      <div className='text-right'>
+                        <p className='text-sm font-semibold text-foreground'>{formatCurrency(entry.grandTotal)}</p>
+                        <p className='text-xs capitalize text-muted-foreground'>
+                          {entry.travelMode === 'rental' ? 'Rental vehicle' : 'Personal vehicle'}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </CardContent>
+          </Card>
 
           <Card>
             <CardHeader>

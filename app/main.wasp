@@ -161,6 +161,16 @@ page EstimatorPage {
   component: import EstimatorPage from "@src/travel/TravelEstimatorPage"
 }
 
+action createTravelEstimate {
+  fn: import { createTravelEstimate } from "@src/travel/operations",
+  entities: [TravelEstimate]
+}
+
+query getTravelEstimates {
+  fn: import { getTravelEstimates } from "@src/travel/operations",
+  entities: [TravelEstimate]
+}
+
 // Keep demo route for reference but redirect to estimator
 route DemoAppRoute { path: "/demo-app", to: EstimatorPage }
 page DemoAppPage {
