@@ -193,13 +193,13 @@ function ArticleBody() {
 function CTA() {
   return (
     <section className='mx-auto mt-20 max-w-4xl'>
-      <Card className='border-border/60 bg-primary/10 backdrop-blur'>
+      <Card className='border border-border/40 bg-gradient-to-r from-primary/95 to-blue-700 text-slate-100 shadow-[0_28px_60px_-35px_rgba(30,64,175,0.6)]'>
         <CardContent className='flex flex-col gap-6 p-8 sm:flex-row sm:items-center sm:justify-between'>
           <div>
-            <h3 className='text-2xl font-semibold text-primary-foreground/90'>Ready to reclaim your time?</h3>
-            <p className='mt-2 text-sm text-primary-foreground/70'>Run your next estimate through the Travel Cost Estimator and feel the difference within minutes.</p>
+            <h3 className='text-2xl font-semibold'>Ready to reclaim your time?</h3>
+            <p className='mt-2 text-sm text-slate-200/85 sm:text-base'>Run your next estimate through the Travel Cost Estimator and feel the difference within minutes.</p>
           </div>
-          <Button asChild size='lg' variant='default' className='w-full sm:w-auto'>
+          <Button asChild size='lg' variant='secondary' className='w-full bg-white text-primary hover:bg-slate-100 sm:w-auto'>
             <WaspRouterLink to={routes.EstimatorRoute.to}>Start an estimate</WaspRouterLink>
           </Button>
         </CardContent>
