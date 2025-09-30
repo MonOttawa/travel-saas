@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-29T13:45:07.255Z",
+  "generatedAt": "2025-09-30T01:53:11.346Z",
   "sources": [
     {
       "id": "kilometricRates",
@@ -37,8 +37,8 @@
     },
     {
       "id": "exchangeRates",
-      "hash": "6e061f88fc964e44e264c9b2f550df7f63b33c74e53b60cf69c7da40045a21e2",
-      "recordCount": 90,
+      "hash": "5d5658547171767bef331f13cee58999356fd5ee73e9aa63a3867f8d077e2d57",
+      "recordCount": 21,
       "source": "https://www.njc-cnm.gc.ca/xe/en"
     }
   ]
