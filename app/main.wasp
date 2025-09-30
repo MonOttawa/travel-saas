@@ -111,6 +111,11 @@ page FAQPage {
   component: import FAQPage from "@src/landing-page/FAQPage"
 }
 
+route EstimatesHistoryRoute { path: "/history", to: EstimatesHistoryPage }
+page EstimatesHistoryPage {
+  component: import EstimatesHistoryPage from "@src/travel/EstimatesHistoryPage"
+}
+
 //#region Auth Pages
 route LoginRoute { path: "/login", to: LoginPage }
 page LoginPage {
