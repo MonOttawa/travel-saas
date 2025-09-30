@@ -1,9 +1,9 @@
 import { routes } from 'wasp/client/router';
-import { BlogUrl } from '../../../shared/common';
+import { BlogUrl, FAQUrl } from '../../../shared/common';
 import type { NavigationItem } from './NavBar';
 
 const staticNavigationItems: NavigationItem[] = [
-  { name: 'FAQ', to: '/#faq' },
+  { name: 'FAQ', to: FAQUrl },
   { name: 'Blog', to: BlogUrl },
 ];
 
