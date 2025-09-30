@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { cn } from '../../lib/utils';
-import canadianCities from '../../data/canadian-cities.json';
+import canadianCities from '../../../data/canadian-cities.json';
 
 interface CityAutocompleteProps {
   id: string;
