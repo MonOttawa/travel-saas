@@ -1,2 +1,2 @@
 export const DocsUrl = '/docs';
-export const BlogUrl = '/docs/blog';
+export const BlogUrl = '/docs/blog/';
